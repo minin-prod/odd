@@ -3,10 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="./src/theme.css">
-	<script src="./src/sys32.js"></script>
+	<script defer src="./src/sys32.js"></script>
 	<title>ODD</title>
+
+	<!-- #region dll imports -->
+	<script> var dll = {}; </script>
+	<script src="./src/dll/window.js"></script>
+	<!-- #endregion -->
 </head>
 <body>
-	
+	<a onclick="new dll.window.Window()">explorer</a>
 </body>
 </html>
