@@ -5,7 +5,19 @@ body {
 	width: 100vw;
 }
 
-/* #region container */
+/* controls */
+
+.control {
+
+}
+
+nav {
+	width: 100vw;
+	height: 40px;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+/* container */
 
 .odd-container {
 	width: 100vw;
@@ -13,9 +25,7 @@ body {
 	overflow: hidden;
 }
 
-/* #endregion */
-
-/* #region preloader */
+/* preloader */
 
 .preloader-background {
 	background: #1c1c1c;
@@ -50,5 +60,3 @@ body {
 	from { transform: rotate(45deg); }
 	to { transform: rotate(405deg); }
 }
-
-/* #endregion */
