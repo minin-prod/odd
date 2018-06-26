@@ -5,6 +5,16 @@ body {
 	width: 100vw;
 }
 
+/* #region container */
+
+.odd-container {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* #endregion */
+
 /* #region preloader */
 
 .preloader-background {
