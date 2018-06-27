@@ -62,6 +62,10 @@ body {
 	background-image: url("./img/close.png");
 }
 
+.app .window-title-buttons-max {
+	background-image: url("./img/maximize.png");
+}
+
 .app .window-content {
 	width: 100%;
 	height: calc(100% - 3em);
