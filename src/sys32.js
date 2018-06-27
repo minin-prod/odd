@@ -6,6 +6,14 @@ new Promise((result, reject) => {
 
 	{
 		let navbar = document.createElement("nav");
+		let left = document.createElement("div"); left.classList.add("left");
+		let mid = document.createElement("div"); mid.classList.add("mid");
+		let right = document.createElement("div"); right.classList.add("right");
+
+		navbar.appendChild(left);
+		navbar.appendChild(mid);
+		navbar.appendChild(right);
+
 		layerNav.appendChild(navbar);
 	}
 

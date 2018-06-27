@@ -16,6 +16,20 @@ body {
 .nav nav {
 	width: 100vw;
 	height: 40px;
+	display: flex;
+}
+
+nav .left {
+	text-align: left;
+}
+
+nav .mid {
+	text-align: left;
+	flex: 1;
+}
+
+nav .right {
+	text-align: right;
 }
 
 /* containers and layers */
