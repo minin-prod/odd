@@ -28,11 +28,13 @@ body {
 	height: 2em;
 	padding: 0.5em;
 	padding-bottom: 0;
+	background: var(--accent);
 }
 
 .app .window-title-title {
 	display: flex;
 	flex: 0.5;
+	color: var(--textColor);
 	font-size: 1em;
 }
 
@@ -71,6 +73,7 @@ body {
 
 .nav nav * {
 	margin: 0;
+	color: var(--textColor);
 }
 
 .nav nav .section {
@@ -94,6 +97,12 @@ body {
 .nav nav .right {
 	text-align: right;
 	justify-content: right;
+}
+
+/* wallpaper layer */
+
+.wall {
+	background: var(--wallpaper);
 }
 
 /* containers and layers */
