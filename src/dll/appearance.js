@@ -3,8 +3,7 @@ var settings = {};
 dll.appearance = {};
 
 dll.appearance.settings = settings = {
-	"backgroundStyle": "solid",
-	"background": "#1c1c1c",
+	"wallpaper": "#1c1c1c",
 	"accent": "0, 0, 0"
 }
 
@@ -13,9 +12,7 @@ dll.appearance.init = () => {
 	let layerNav = document.getElementsByClassName("nav")[0];
 
 	{
-		if (settings.backgroundStyle == "solid") {
-			layerWall.style.backgroundColor = settings.background;
-		}
+		layerWall.style.background = settings.background;
 	}
 
 	{
