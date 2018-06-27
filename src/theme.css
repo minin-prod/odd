@@ -13,6 +13,13 @@ body {
 
 /* windows */
 
+.app .window.maximized {
+	width: 100% !important;
+	height: 100% !important;
+	top: 0 !important;
+	left: 0 !important;
+}
+
 .app .window {
 	position: absolute;
 	width: 512px;
