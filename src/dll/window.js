@@ -46,7 +46,13 @@ dll.window.Window = class Window {
 		// Append Children to Base Window Element
 		this.window.appendChild(this.titlebar);
 		this.window.appendChild(this.content);
-		body.appendChild(this.window);
+		
+		// Set Window Start Locations
+		this.window.style.top = "120px";
+		this.window.style.left = "40px";
+
+		// Move new Window to Front
+		this.MoveToFront();
 
 		// Attach Event Listeners
 		this.window.onmousedown = (e) => {
@@ -54,6 +60,7 @@ dll.window.Window = class Window {
 		}
 
 		// Initialize App
+		body.appendChild(this.window);
 		this.appdata.init(this);
 	}
 
@@ -64,7 +71,7 @@ dll.window.Window = class Window {
 	MoveToFront(e) {
 		let max = 0;
 
-		Array.prototype.forEach.call(document.getElementsByClassName("window"), (x) => {
+		Array.prototype.forEach.call(document.getElementsByClassName("app")[0].getElementsByClassName("window"), (x) => {
 			let z = x.style.zIndex;
 			
 			max = Math.max(max, z);
