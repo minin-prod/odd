@@ -6,9 +6,9 @@ new Promise((result, reject) => {
 
 	{
 		let navbar = document.createElement("nav");
-		let left = document.createElement("div"); left.classList.add("left");
-		let mid = document.createElement("div"); mid.classList.add("mid");
-		let right = document.createElement("div"); right.classList.add("right");
+		let left = document.createElement("div"); left.classList.add("section", "left");
+		let mid = document.createElement("div"); mid.classList.add("section", "mid");
+		let right = document.createElement("div"); right.classList.add("section", "right");
 
 		navbar.appendChild(left);
 		navbar.appendChild(mid);

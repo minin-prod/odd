@@ -19,17 +19,31 @@ body {
 	display: flex;
 }
 
-nav .left {
-	text-align: left;
+.nav nav * {
+	margin: 0;
 }
 
-nav .mid {
+.nav nav .section {
+	height: 100%;
+	padding: 0 1vw;
+	display: flex;
+	align-items: center;
+}
+
+.nav nav .left {
+	text-align: left;
+	justify-content: left;
+}
+
+.nav nav .mid {
 	text-align: left;
 	flex: 1;
+	justify-content: left;
 }
 
-nav .right {
+.nav nav .right {
 	text-align: right;
+	justify-content: right;
 }
 
 /* containers and layers */
