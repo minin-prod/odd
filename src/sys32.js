@@ -11,5 +11,7 @@ new Promise((result, reject) => {
 
 	result(container);
 }).then((res, err) => {
+	dll.appearance.init();
+}).then((res, err) => {
 	document.getElementById("preloader").remove();
 });

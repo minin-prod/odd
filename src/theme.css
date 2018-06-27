@@ -11,10 +11,11 @@ body {
 
 }
 
-nav {
+/* navigation layer */
+
+.nav nav {
 	width: 100vw;
 	height: 40px;
-	background: rgba(0, 0, 0, 0.2);
 }
 
 /* containers and layers */
