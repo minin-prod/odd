@@ -17,12 +17,14 @@ nav {
 	background: rgba(0, 0, 0, 0.2);
 }
 
-/* container */
+/* containers and layers */
 
-.odd-container {
+.odd-container,
+.layer {
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	position: absolute;
 }
 
 /* preloader */
