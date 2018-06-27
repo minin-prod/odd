@@ -2,7 +2,7 @@ dll.window = {};
 
 dll.window.Window = class Window {
 	constructor(apps, appdata, appid = "0") {
-		const body = document.body;
+		const body = document.getElementsByClassName("app")[0];
 
 		// Get App Data
 		this.appid = appid;

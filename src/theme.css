@@ -11,6 +11,56 @@ body {
 
 }
 
+/* windows */
+
+.app .window {
+	position: absolute;
+	width: 512px;
+	height: 256px;
+	background: #ddd;
+	overflow: auto;
+	resize: both;
+}
+
+.app .window-title {
+	display: flex;
+	width: calc(100% - 1em);
+	height: 2em;
+	padding: 0.5em;
+	padding-bottom: 0;
+}
+
+.app .window-title-title {
+	display: flex;
+	flex: 0.5;
+	font-size: 1em;
+}
+
+.app .window-title-buttons {
+	display: flex;
+	flex: 0.5;
+	justify-content: right;
+}
+
+.app .window-title-buttons-close {
+	height: 1.5em;
+	width: 1.5em;
+	background-color: rgba(255, 255, 255, 0);
+	background-image: url("./img/close.png");
+	background-size: contain;
+	transition: background-color 0.1s;
+}
+
+.app .window-title-buttons-close:hover {
+	background-color: rgba(255, 255, 255, 0.2)
+}
+
+.app .window-content {
+	width: 100%;
+	height: calc(100% - 3em);
+	overflow: auto;
+}
+
 /* navigation layer */
 
 .nav nav {
