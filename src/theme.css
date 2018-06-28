@@ -12,8 +12,8 @@ body {
 }
 
 .control.list * {
-	padding: 0.2em 0.3em;
-	margin: 0.2em 0.4em;
+	padding: 0.3em 0.5em;
+	margin: 0.1em 0;
 	background: rgba(255, 255, 255, 0);
 	transition: background 0.1s;
 	border-radius: 0;
@@ -26,7 +26,7 @@ body {
 .control.divider {
 	width: calc(100% - 0.8em);
 	height: 1px;
-	margin: 0.4em;
+	margin: 0.2em 0.4em;
 	background: var(--textColor);
 }
 
