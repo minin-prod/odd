@@ -46,15 +46,14 @@ dll.start.init = () => {
 
 	button.addEventListener("click", (e) => {
 		dll.start.menu.window.classList.toggle("minimized");
+		dll.start.menu.MoveToFront();
 	});
 
 	dll.start.menu.window.addEventListener("click", (e) => {
-		if (dll.fs.libraries.includes(e.target.innerText)) {
-			new dll.window.Window(2, ["library", e.target.innerText]);
-		} else if (["Logout", "Restart", "Shutdown", "Sleep"].includes(e.target.innerText)) {
+		if (["Logout", "Restart", "Shutdown", "Sleep"].includes(e.target.innerText)) {
 
 		} else {
-			throw new Error();
+			new dll.window.Window(2, ["library", e.target.innerText]);
 		}
 	});
 

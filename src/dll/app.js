@@ -26,7 +26,7 @@ dll.app.appdata = {
 		content: ``
 	},
 	"explorer": {
-		title: "File Exploerer",
+		title: "File Explorer",
 		meta: {
 			author: "Minin Productions",
 			description: "File Explorer"
