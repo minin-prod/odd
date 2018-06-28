@@ -1,7 +1,7 @@
 dll.window = {};
 
 dll.window.Window = class Window {
-	constructor(appid = "0") {
+	constructor(appid = "0", init = true) {
 		let body = document.getElementsByClassName("app")[0];
 		let apps = dll.app.apps;
 		let appdata = dll.app.appdata;
@@ -73,7 +73,7 @@ dll.window.Window = class Window {
 
 		// Initialize App
 		body.appendChild(this.window);
-		this.appdata.init(this);
+		if (init) this.appdata.init(this);
 	}
 
 	/**
