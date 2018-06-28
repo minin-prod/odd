@@ -26,6 +26,11 @@ dll.window.Window = class Window {
 		this.titlebar_buttons = document.createElement("div");
 		this.titlebar_buttons.classList.add("window-title-buttons");
 
+		// Title Bar > Actions > Minimize
+		this.titlebar_buttons_min = document.createElement("div");
+		this.titlebar_buttons_min.classList.add("window-title-buttons-min");
+		this.titlebar_buttons_min.onclick = () => this.window.classList.toggle("minimized");
+
 		// Title Bar > Actions > Maximize
 		this.titlebar_buttons_max = document.createElement("div");
 		this.titlebar_buttons_max.classList.add("window-title-buttons-max");
@@ -45,6 +50,7 @@ dll.window.Window = class Window {
 		if (apps[appid]) this.window.classList.add(`app-${this.appid}`);
 
 		// Append Children to Title Bar
+		this.titlebar_buttons.appendChild(this.titlebar_buttons_min);
 		this.titlebar_buttons.appendChild(this.titlebar_buttons_max);
 		this.titlebar_buttons.appendChild(this.titlebar_buttons_close);
 		this.titlebar.appendChild(this.titlebar_buttons);

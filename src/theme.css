@@ -77,6 +77,10 @@ body {
 	background-image: url("./img/maximized.png");
 }
 
+.app .window-title-buttons-min {
+	background-image: url("./img/minimize.png");
+}
+
 .app .window-content {
 	width: 100%;
 	height: calc(100% - 3em);
