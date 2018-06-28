@@ -10,6 +10,13 @@ new Promise((result, reject) => {
 		let mid = document.createElement("div"); mid.classList.add("section", "mid");
 		let right = document.createElement("div"); right.classList.add("section", "right");
 
+		{
+			let menu = document.createElement("div");
+			menu.classList.add("start");
+
+			left.appendChild(menu);
+		}
+
 		navbar.appendChild(left);
 		navbar.appendChild(mid);
 		navbar.appendChild(right);
