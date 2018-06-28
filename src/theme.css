@@ -5,6 +5,18 @@ body {
 	width: 100vw;
 }
 
+::-webkit-scrollbar-track {
+	background: rgba(var(--accentRGBA), 0.2);
+}
+
+::-webkit-scrollbar {
+	width: 0.4em;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--accent);
+}
+
 /* controls */
 
 .control {
