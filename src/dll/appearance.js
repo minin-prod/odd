@@ -11,8 +11,6 @@ dll.appearance.init = () => {
 	let settings = dll.appearance.settings;
 
 	let head = document.getElementsByTagName("head")[0];
-	let layerWall = document.getElementsByClassName("wall")[0];
-	let layerNav = document.getElementsByClassName("nav")[0];
 
 	{
 		let _settings = ":root {\n";
