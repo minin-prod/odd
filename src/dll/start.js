@@ -48,12 +48,20 @@ dll.start.init = () => {
 		dll.start.menu.window.classList.toggle("minimized");
 	});
 
+	dll.start.menu.window.addEventListener("click", (e) => {
+		if (dll.fs.libraries.includes(e.target.innerText)) {
+			new dll.window.Window(3, ["library", e.target.innerText]);
+		} else if (["Logout", "Restart", "Shutdown", "Sleep"].includes(e.target.innerText)) {
+
+		} else {
+			throw new Error();
+		}
+	});
+
 	document.addEventListener("click", (e) => {
 		let targetClasses = e.target.attributes.class.nodeValue;
 
-		if (!(
-			targetClasses != "window-content" && targetClasses == "start" ||
-			targetClasses == "window-content" && targetClasses != "start")) {
+		if (targetClasses != "start") {
 			dll.start.menu.window.classList.add("minimized");
 		}
 	});
