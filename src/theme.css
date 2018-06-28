@@ -105,6 +105,24 @@ body {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
+.window.start {
+	width: 256px;
+	height: 60vh;
+	top: 0 !important;
+	left: 0 !important;
+	resize: none;
+}
+
+.window.start .window-title {
+	display: none;
+}
+
+.window.start .window-content {
+	height: 100%;
+	background: var(--accent);
+	color: var(--textColor);
+}
+
 /* navigation layer */
 
 .nav nav {
