@@ -13,13 +13,14 @@ body {
 
 .control.list * {
 	padding: 0.2em 0.3em;
-	margin: 0.2em 0;
+	margin: 0.2em 0.4em;
 	background: rgba(255, 255, 255, 0);
+	transition: background 0.1s;
 	border-radius: 0;
 }
 
 .control.list *:hover {
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .control.divider {
@@ -130,6 +131,7 @@ body {
 	top: 0 !important;
 	left: 0 !important;
 	resize: none;
+	background: transparent;
 }
 
 .window.start .window-title {
@@ -140,7 +142,7 @@ body {
 	width: initial;
 	height: 100%;
 	padding: 1.25em 1em;
-	background: var(--accentRGBA);
+	background: rgba(var(--accentRGBA), 0.2);
 	color: var(--textColor);
 }
 
@@ -150,7 +152,7 @@ body {
 	width: 100vw;
 	height: 40px;
 	display: flex;
-	background: var(--accentRGBA);
+	background: rgba(var(--accentRGBA), 0.2);
 }
 
 .nav nav * {
