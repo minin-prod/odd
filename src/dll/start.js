@@ -24,7 +24,7 @@ dll.start.startMenu = class StartMenu extends dll.window.Window {
 
 			<div class="control list">
 				<div class="control list-item">Shutdown</div>
-				<div class="control list-item">Restard</div>
+				<div class="control list-item">Restart</div>
 				<div class="control list-item">Logout</div>
 				<div class="control list-item">Sleep</div>
 			</div>
