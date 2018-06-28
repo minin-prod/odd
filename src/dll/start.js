@@ -26,10 +26,15 @@ dll.start.startMenu = class StartMenu extends dll.window.Window {
 	}
 }
 
+dll.start.menu = null;
+
 dll.start.init = () => {
 	let button = document.getElementsByClassName("left")[0].getElementsByClassName("start")[0];
+	
+	dll.start.menu = new dll.start.startMenu();
+	dll.start.menu.window.classList.add("minimized");
 
 	button.addEventListener("click", (e) => {
-		new dll.start.startMenu();
+		dll.start.menu.window.classList.toggle("minimized");
 	});
 }
