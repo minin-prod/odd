@@ -63,18 +63,18 @@ body {
 
 /* windows */
 
-.app .window.minimized {
+.window.minimized {
 	display: none !important;
 }
 
-.app .window.maximized {
+.window.maximized {
 	width: 100% !important;
 	height: 100% !important;
 	top: 0 !important;
 	left: 0 !important;
 }
 
-.app .window {
+.window {
 	position: absolute;
 	width: 512px;
 	height: 256px;
@@ -85,7 +85,7 @@ body {
 	resize: both;
 }
 
-.app .window-title {
+.window .window-title {
 	display: flex;
 	width: calc(100% - 1em);
 	height: 2em;
@@ -95,19 +95,19 @@ body {
 	user-select: none;
 }
 
-.app .window-title-title {
+.window .window-title-title {
 	display: flex;
 	flex: 1;
 	color: var(--textColor);
 	font-size: 1em;
 }
 
-.app .window-title-buttons {
+.window .window-title-buttons {
 	display: flex;
 	justify-content: flex-end;
 }
 
-.app .window-title-buttons * {
+.window .window-title-buttons * {
 	background-size: contain;
 	transition: background-color 0.1s;
 	height: 1.5em;
@@ -115,27 +115,27 @@ body {
 	background-color: rgba(255, 255, 255, 0);
 }
 
-.app .window-title-buttons *:hover {
+.window .window-title-buttons *:hover {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.app .window-title-buttons-close {
+.window .window-title-buttons-close {
 	background-image: url("./img/close.png");
 }
 
-.app .window-title-buttons-max {
+.window .window-title-buttons-max {
 	background-image: url("./img/maximize.png");
 }
 
-.app .window.maximized .window-title-buttons-max {
+.window .window.maximized .window-title-buttons-max {
 	background-image: url("./img/maximized.png");
 }
 
-.app .window-title-buttons-min {
+.window .window-title-buttons-min {
 	background-image: url("./img/minimize.png");
 }
 
-.app .window-content {
+.window .window-content {
 	width: 100%;
 	height: calc(100% - 3em);
 	overflow: auto;

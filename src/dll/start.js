@@ -4,6 +4,12 @@ dll.start.startMenu = class StartMenu extends dll.window.Window {
 	constructor() {
 		super(1, [], false);
 
+		this.appdata.init = (window) => {
+			let w = window.window;
+
+			w.classList.add("start");
+		}
+
 		this.content.innerHTML = `
 			<div class="control list">
 				<div class="control list-item">Productivity</div>
@@ -31,12 +37,24 @@ dll.start.startMenu = class StartMenu extends dll.window.Window {
 dll.start.menu = null;
 
 dll.start.init = () => {
-	let button = document.getElementsByClassName("left")[0].getElementsByClassName("start")[0];
+	let layerWall = document.getElementById("odd-container").getElementsByClassName("wall")[0];
+	let layerApp = document.getElementById("odd-container").getElementsByClassName("app")[0];
+	let button = document.getElementsByTagName("nav")[0].getElementsByClassName("start")[0];
 	
 	dll.start.menu = new dll.start.startMenu();
 	dll.start.menu.window.classList.add("minimized");
 
 	button.addEventListener("click", (e) => {
 		dll.start.menu.window.classList.toggle("minimized");
+	});
+
+	document.addEventListener("click", (e) => {
+		let targetClasses = e.target.attributes.class.nodeValue;
+
+		if (!(
+			targetClasses != "window-content" && targetClasses == "start" ||
+			targetClasses == "window-content" && targetClasses != "start")) {
+			dll.start.menu.window.classList.add("minimized");
+		}
 	});
 }
