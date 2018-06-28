@@ -8,7 +8,25 @@ body {
 /* controls */
 
 .control {
+	display: block;
+}
 
+.control.list * {
+	padding: 0.2em 0.3em;
+	margin: 0.2em 0;
+	background: rgba(255, 255, 255, 0);
+	border-radius: 0;
+}
+
+.control.list *:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.control.divider {
+	width: calc(100% - 0.8em);
+	height: 1px;
+	margin: 0.4em;
+	background: var(--textColor);
 }
 
 /* windows */
@@ -106,8 +124,9 @@ body {
 }
 
 .window.start {
-	width: 256px;
+	width: 16vw;
 	height: initial;
+	max-height: 60vh;
 	top: 0 !important;
 	left: 0 !important;
 	resize: none;
@@ -118,8 +137,10 @@ body {
 }
 
 .window.start .window-content {
+	width: initial;
 	height: 100%;
-	background: var(--accent);
+	padding: 1.25em 1em;
+	background: var(--accentRGBA);
 	color: var(--textColor);
 }
 
@@ -129,6 +150,7 @@ body {
 	width: 100vw;
 	height: 40px;
 	display: flex;
+	background: var(--accentRGBA);
 }
 
 .nav nav * {

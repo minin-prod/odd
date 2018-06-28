@@ -2,7 +2,7 @@ dll.appearance = {};
 
 dll.appearance.settings = {
 	"wallpaper": "#1c1c1c",
-	"accentRGBAS": "0, 0, 0",
+	"accentRGBA": "rgba(0, 0, 0, 0.2)",
 	"accent": "#000",
 	"textColor": "#ddd"
 }
@@ -24,10 +24,5 @@ dll.appearance.init = () => {
 		let _style = document.createElement("style");
 		_style.innerHTML = _settings;
 		head.appendChild(_style);
-	}
-
-	{
-		let navbar = layerNav.getElementsByTagName("nav")[0];
-		navbar.style.backgroundColor = `rgba(${settings.accentRGBAS}, 0.2)`;
 	}
 }
