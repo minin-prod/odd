@@ -1,12 +1,13 @@
 dll.window = {};
 
 dll.window.Window = class Window {
-	constructor(appid = "0", init = true) {
+	constructor(appid = "0", args = [], init = true) {
 		let body = document.getElementsByClassName("app")[0];
 		let apps = dll.app.apps;
 		let appdata = dll.app.appdata;
 
 		// Get App Data
+		this.args = args;
 		this.appid = appid;
 		this.appdata = appdata[apps[this.appid]];
 

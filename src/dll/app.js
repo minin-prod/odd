@@ -21,7 +21,7 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "Start Menu"
 		},
-		init: (win) => { let w = win.window; w.classList.add("start"); },
+		init: (w) => { },
 		content: ``
 	}
 }

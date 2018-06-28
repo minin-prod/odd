@@ -43,7 +43,7 @@ body {
 }
 
 .control.list * {
-	padding: 0.3em 0.5em;
+	padding: 0.2em 0.5em;
 	margin: 0.1em 0;
 	background: rgba(255, 255, 255, 0);
 	transition: background 0.1s;
@@ -199,6 +199,7 @@ body {
 }
 
 .nav nav .left {
+	padding-left: 0.5em;
 	text-align: left;
 	justify-content: left;
 }
