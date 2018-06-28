@@ -50,7 +50,7 @@ dll.start.init = () => {
 
 	dll.start.menu.window.addEventListener("click", (e) => {
 		if (dll.fs.libraries.includes(e.target.innerText)) {
-			new dll.window.Window(3, ["library", e.target.innerText]);
+			new dll.window.Window(2, ["library", e.target.innerText]);
 		} else if (["Logout", "Restart", "Shutdown", "Sleep"].includes(e.target.innerText)) {
 
 		} else {
