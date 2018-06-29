@@ -2,6 +2,7 @@ dll.hdd = {};
 
 dll.hdd.fs = {
 	"root": {
+		type: "dir",
 		"root": {
 			type: "dir"
 		},
@@ -36,13 +37,18 @@ dll.hdd.manager = class Manager {
 
 	cd(dir) {
 		if (dir == "..") {
-			if (!dll.hdd.util.isEmpty(this.loc.pop()))
+			let removed = this.loc.pop();
+
+			if (dll.hdd.util.isEmpty(this.loc)) {
+				this.loc.push(removed);
+			} else {
 				this.loc.pop();
+			}
 		} else {
 			this.loc.push(dir);
 		}
 
-		update();
+		this.update();
 	}
 
 	cdlist(navto) {
@@ -57,7 +63,7 @@ dll.hdd.manager = class Manager {
 			}
 		});
 
-		update();
+		this.update();
 	}
 
 	update() {
@@ -65,11 +71,11 @@ dll.hdd.manager = class Manager {
 		do {
 			this.current = dll.hdd.fs;
 			this.loc.forEach((dir) => {
-				navigation = navigation[dir];
+				this.current = this.current[dir];
 			});
 
 			if (this.current.type != "dir") {
-				loc.pop();
+				this.loc.pop();
 			} else {
 				x = false;
 			}
