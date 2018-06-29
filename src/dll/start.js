@@ -53,7 +53,7 @@ dll.start.init = () => {
 		if (["Logout", "Restart", "Shutdown", "Sleep"].includes(e.target.innerText)) {
 
 		} else if (e.target.innerText == "File Manager") {
-			new dll.window.Window(2 ["root"]);
+			new dll.window.Window(2, ["root"]);
 		} else if (e.target.innerText == "Settings") {
 			new dll.window.Window(3);
 		} else {
