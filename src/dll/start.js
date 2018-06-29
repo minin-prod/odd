@@ -52,8 +52,12 @@ dll.start.init = () => {
 	dll.start.menu.window.addEventListener("click", (e) => {
 		if (["Logout", "Restart", "Shutdown", "Sleep"].includes(e.target.innerText)) {
 
+		} else if (e.target.innerText == "File Manager") {
+			new dll.window.Window(2 ["root"]);
+		} else if (e.target.innerText == "Settings") {
+			new dll.window.Window(3);
 		} else {
-			new dll.window.Window(2, ["library", e.target.innerText]);
+			new dll.window.Window(2, ["root", "home", "libraries", e.target.innerText]);
 		}
 	});
 

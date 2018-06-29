@@ -19,7 +19,22 @@ dll.hdd.fs = {
 			type: "dir"
 		},
 		"home": {
-			type: "dir"
+			type: "dir",
+			"libraries": {
+				type: "dir",
+				"Productivity": {
+					type: "dir"
+				},
+				"Programming": {
+					type: "dir"
+				},
+				"Tools": {
+					type: "dir"
+				},
+				"Games": {
+					type: "dir"
+				}
+			}
 		}
 	}
 }
