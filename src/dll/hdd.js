@@ -22,3 +22,8 @@ dll.hdd.fs = {
 		}
 	}
 }
+
+dll.hdd.util = {
+	"isRoot": (loc) => { if (loc.length == 1 && loc[0] == "root") { return true } else { return false } },
+	"isEmpty": (loc) => { if (loc.length == 0) { return true } ekse { return false } }
+}
