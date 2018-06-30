@@ -182,10 +182,10 @@ body {
 
 .window .window-title {
 	display: flex;
+	align-items: center;
 	width: calc(100% - 1em);
 	height: 2em;
-	padding: 0.5em;
-	padding-bottom: 0;
+	padding: 0 0.5em;
 	background: var(--accent);
 	user-select: none;
 }
