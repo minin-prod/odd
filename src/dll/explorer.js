@@ -15,6 +15,10 @@ dll.explorer.init = (w) => {
 
 	let man = new dll.hdd.manager();
 
+	if (w.args.length > 0) {
+		man.cdlist(w.args);
+	}
+
 	function update(display) {
 		display.innerHTML = "";
 
