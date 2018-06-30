@@ -67,6 +67,19 @@ body {
 	display: flex;
 }
 
+.control.splitter-navbar { flex-direction: column; }
+
+.control.splitter-navbar > *:nth-child(1) {
+	flex: 0 0 1.8em;
+	background: var(--accent);
+	color: var(--textColor);
+}
+
+.control.splitter-navbar > *:nth-child(2) {
+	flex: 1;
+	overflow: auto;
+}
+
 .control.splitter-sidebar > *:nth-child(1) {
 	height: 100%;
 	overflow-y: scroll;
@@ -108,6 +121,12 @@ body {
 	width: 100%;
 	text-align: center;
 }
+
+/* icons */
+
+.icon-folder { }
+
+.icon-back { }
 
 /* windows */
 
