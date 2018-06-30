@@ -1,6 +1,20 @@
 dll.explorer = {};
 
 dll.explorer.init = (w) => {
+	let man = new dll.hdd.manager();
+
+	let splitter = document.createElement("div");
+	splitter.classList.add("control", "splitter", "splitter-navbar");
+
+	let navbar = document.createElement("div");
+	navbar.classList.add("control", "panel", "nav");
+
+	{
+		// add navbar contents
+	}
+
+	splitter.appendChild(navbar);
+
 	let container = document.createElement("div");
 	container.classList.add("control", "splitter", "splitter-sidebar");
 
@@ -12,8 +26,6 @@ dll.explorer.init = (w) => {
 	let display = document.createElement("div");
 	display.classList.add("control", "icongrid");
 	container.appendChild(display);
-
-	let man = new dll.hdd.manager();
 
 	if (w.args.length > 0) {
 		man.cdlist(w.args);
@@ -51,6 +63,7 @@ dll.explorer.init = (w) => {
 		});
 	}
 
-	w.content.appendChild(container);
+	splitter.appendChild(container);
+	w.content.appendChild(splitter);
 	update(display);
 }
