@@ -36,8 +36,13 @@ dll.explorer.init = (w) => {
 					
 					griditem.appendChild(griditemText);
 				}
-	
+
 				display.appendChild(griditem);
+	
+				griditem.addEventListener("click", (e) => {
+					man.cd(item);
+					update(display);
+				});
 			}
 		});
 	}
