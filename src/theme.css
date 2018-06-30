@@ -79,6 +79,35 @@ body {
 	flex: 0.7;
 }
 
+.control.icongrid {
+	padding: 1em;
+	overflow-y: scroll;
+	width: 100%;
+	height: calc(100% - 2em) !important;
+}
+
+.control.icongrid-item {
+	padding: 0.5em;
+	display: inline-flex;
+	flex-direction: column;
+	transition: background 0.1s;
+}
+
+.control.icongrid-item:hover {
+	background: rgba(var(--accentRGBA), 0.1);
+}
+
+.control.icongrid-item > *:nth-child(1) {
+	width: 8vw;
+	height: 8vw;
+}
+
+.control.icongrid-item > *:nth-child(2) {
+	margin: 0;
+	font-size: 0.8em;
+	width: 100%;
+	text-align: center;
+}
 
 /* windows */
 
