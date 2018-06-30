@@ -11,11 +11,12 @@ dll.explorer.init = (w) => {
 
 	{
 		let up = document.createElement("div");
-		up.classList.add("button", "button-small", "icon-up");
+		up.classList.add("control", "button", "button-small", "icon-up");
 		navbar.appendChild(up);
 
 		up.addEventListener("click", (e) => {
 			man.cd("..");
+			update(display);
 		});
 	}
 

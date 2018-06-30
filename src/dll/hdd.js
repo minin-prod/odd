@@ -52,11 +52,7 @@ dll.hdd.manager = class Manager {
 
 	cd(dir) {
 		if (dir == "..") {
-			let removed = this.loc.pop();
-
-			if (dll.hdd.util.isEmpty(this.loc)) {
-				this.loc.push(removed);
-			} else {
+			if (this.loc.length > 1) {
 				this.loc.pop();
 			}
 		} else {
@@ -70,12 +66,7 @@ dll.hdd.manager = class Manager {
 		this.loc = [];
 
 		navto.forEach((dir) => {
-			if (dir == "..") {
-				if (!dll.hdd.util.isEmpty(this.loc.pop()))
-					this.loc.pop();
-			} else {
-				this.loc.push(dir);
-			}
+			this.loc.push(dir);
 		});
 
 		this.update();

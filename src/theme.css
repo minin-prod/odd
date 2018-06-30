@@ -122,6 +122,24 @@ body {
 	text-align: center;
 }
 
+.control.button {
+	display: inline-block;
+}
+
+.button.button-small {
+	width: 1.4em;
+	height: 1.4em;
+}
+
+.control.panel.nav {
+	display: flex;
+	align-content: center;
+}
+
+.control.panel.nav > * {
+	margin: 0 0.2em;
+}
+
 /* icons */
 
 .icon-folder { }
