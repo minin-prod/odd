@@ -124,16 +124,21 @@ body {
 
 .control.button {
 	display: inline-block;
+	transition: background 0.1s;
+}
+
+.control.button:hover {
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 .button.button-small {
-	width: 1.4em;
-	height: 1.4em;
+	width: 1.3em;
+	height: 1.3em;
 }
 
 .control.panel.nav {
 	display: flex;
-	align-content: center;
+	align-items: center;
 }
 
 .control.panel.nav > * {
@@ -142,9 +147,14 @@ body {
 
 /* icons */
 
+.icon-folder, .icon-up {
+	background-position: center !important;
+	background-size: cover !important;
+}
+
 .icon-folder { }
 
-.icon-up { }
+.icon-up { background: url("./img/up.png"); }
 
 /* windows */
 
