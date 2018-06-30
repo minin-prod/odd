@@ -5,7 +5,7 @@ dll.explorer.init = (w) => {
 	container.classList.add("control", "splitter", "splitter-sidebar");
 
 	let sidebar = document.createElement("div");
-	sidebar.classList.add("control", "list");
+	sidebar.classList.add("control", "list", "sidebar");
 	for (let i = 0; i < 20; i++) { sidebar.innerHTML += `<div class="control list-item">${i}</div>` }
 	container.appendChild(sidebar);
 
