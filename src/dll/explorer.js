@@ -10,8 +10,17 @@ dll.explorer.init = (w) => {
 	navbar.classList.add("control", "panel", "nav");
 
 	{
-		// add navbar contents
+		let up = document.createElement("div");
+		up.classList.add("button", "button-small", "icon-up");
+		navbar.appendChild(up);
+
+		up.addEventListener("click", (e) => {
+			man.cd("..");
+		});
 	}
+
+	let address = document.createElement("p");
+	navbar.appendChild(address);
 
 	splitter.appendChild(navbar);
 
@@ -33,6 +42,8 @@ dll.explorer.init = (w) => {
 
 	function update(display) {
 		display.innerHTML = "";
+		
+		address.innerText = man.loc.join("\\");
 
 		Object.keys(man.current).forEach((item) => {
 			if (item != "type") {
