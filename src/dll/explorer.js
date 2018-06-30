@@ -12,4 +12,36 @@ dll.explorer.init = (w) => {
 	let display = document.createElement("div");
 	display.classList.add("control", "icongrid");
 	container.appendChild(display);
+
+	let man = new dll.hdd.manager();
+
+	function update(display) {
+		display.innerHTML = "";
+
+		Object.keys(man.current).forEach((item) => {
+			if (item != "type") {
+				let griditem = document.createElement("div");
+				griditem.classList.add("control", "icongrid-item");
+	
+				{
+					let griditemIcon = document.createElement("div");
+					griditemIcon.classList.add("icon-folder");
+	
+					griditem.appendChild(griditemIcon);
+				}
+	
+				{
+					let griditemText = document.createElement("p");
+					griditemText.innerText = item;
+					
+					griditem.appendChild(griditemText);
+				}
+	
+				display.appendChild(griditem);
+			}
+		});
+	}
+
+	w.content.appendChild(container);
+	update(display);
 }
