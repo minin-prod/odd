@@ -152,7 +152,7 @@ body {
 	background-size: cover !important;
 }
 
-.icon-folder { background: url("./img/folder.svg"); color: var(--accent); }
+.icon-folder { -webkit-mask: url("./img/folder.svg") center / contain no-repeat; mask: url("./img/folder.svg") center / contain no-repeat; background: var(--accent); }
 
 .icon-up { background: url("./img/up.png"); }
 
