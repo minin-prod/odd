@@ -29,5 +29,10 @@ new Promise((result, reject) => {
 	dll.appearance.init();
 	dll.start.init();
 }).then((res, err) => {
+	if (err) {
+		alert("An error occured while loading, reload the page or check the debug console for specifics on the error.");
+		throw new Error(err);
+	}
+
 	document.getElementById("preloader").remove();
 });
