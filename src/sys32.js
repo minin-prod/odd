@@ -24,15 +24,14 @@ new Promise((result, reject) => {
 		layerNav.appendChild(navbar);
 	}
 
+	reject("oh no")
 	result(container);
 }).then((res, err) => {
 	dll.appearance.init();
 	dll.start.init();
 }).then((res, err) => {
-	if (err) {
-		alert("An error occured while loading, reload the page or check the debug console for specifics on the error.");
-		throw new Error(err);
-	}
-
 	document.getElementById("preloader").remove();
+}).catch((err) => {
+	console.error(err);
+	alert("An error occured while loading, reload the page or check the debug console for specifics on the error.");
 });
