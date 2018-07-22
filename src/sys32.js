@@ -24,7 +24,6 @@ new Promise((result, reject) => {
 		layerNav.appendChild(navbar);
 	}
 
-	reject("oh no")
 	result(container);
 }).then((res, err) => {
 	dll.appearance.init();
