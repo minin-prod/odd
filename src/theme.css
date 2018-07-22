@@ -7,6 +7,12 @@ body {
 	font-size: 0.9em;
 }
 
+* {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
 @font-face {
 	font-family: Arimo;
 	src: url(./font/Arimo-Regular.woff);
@@ -51,7 +57,7 @@ body {
 }
 
 .control.list > *:hover {
-	background: rgba(var(--accentRGBA), 0.1);
+	background: rgba(var(--accentRGBA), 0.3);
 }
 
 .control.divider {
