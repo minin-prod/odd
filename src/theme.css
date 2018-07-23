@@ -317,6 +317,22 @@ body {
 	color: var(--textColor);
 }
 
+/* clock */
+
+.time {
+	height: calc(100% - 0.9em);
+	padding: 0.45em;
+	font-size: 0.8em;
+	letter-spacing: 0.1em;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0);
+	transition: background-color 0.1s;
+}
+
+.time:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
 /* navigation layer */
 
 .nav nav {
