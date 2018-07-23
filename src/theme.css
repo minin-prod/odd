@@ -106,8 +106,10 @@ body {
 }
 
 .control.icongrid-item {
+	width: 4.2em;
 	padding: 0.5em;
 	display: inline-flex;
+	align-items: center;
 	flex-direction: column;
 	transition: background 0.1s;
 }
@@ -126,6 +128,7 @@ body {
 	font-size: 0.8em;
 	width: 100%;
 	text-align: center;
+	word-wrap: break-word;
 }
 
 .control.button {
