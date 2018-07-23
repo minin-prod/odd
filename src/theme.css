@@ -242,6 +242,28 @@ body {
 	overflow: auto;
 }
 
+/* context menu */
+
+.app-4 {
+	width: 16vw;
+	height: initial;
+	max-height: 60vh;
+	resize: none;
+	background: transparent;
+}
+
+.app-4 .window-title {
+	display: none;
+}
+
+.app-4 .window-content {
+	width: initial;
+	height: 100%;
+	padding: 0.5em;
+	background: rgba(var(--accentRGBA), 0.5);
+	color: var(--textColor);
+}
+
 /* explorer */
 
 .app-2 .sidebar {
@@ -285,7 +307,7 @@ body {
 	width: initial;
 	height: 100%;
 	padding: 1.25em 1em;
-	background: rgba(var(--accentRGBA), 0.2);
+	background: rgba(var(--accentRGBA), 0.5);
 	color: var(--textColor);
 }
 
@@ -295,7 +317,7 @@ body {
 	width: 100vw;
 	height: 40px;
 	display: flex;
-	background: rgba(var(--accentRGBA), 0.2);
+	background: rgba(var(--accentRGBA), 0.5);
 }
 
 .nav nav * {

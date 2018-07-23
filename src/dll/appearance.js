@@ -3,7 +3,7 @@ dll.appearance = {};
 dll.appearance.settings = {
 	"wallpaper": "#1c1c1c",
 	"accentRGBA": "0, 0, 0",
-	"accent": "#000",
+	"accent": "#222226",
 	"textColor": "#ddd"
 }
 
