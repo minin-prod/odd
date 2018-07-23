@@ -4,7 +4,8 @@ dll.app.apps = {
 	"0": "nullapp",
 	"1": "startmenu",
 	"2": "explorer",
-	"3": "settings"
+	"3": "settings",
+	"4": "contextmenu"
 }
 
 dll.app.appdata = {
@@ -41,6 +42,11 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "Configure your ODD workspace"
 		},
+		init: (w) => { },
+		content: ``
+	},
+	"contextmenu": {
+		title: "",
 		init: (w) => { },
 		content: ``
 	}

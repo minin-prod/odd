@@ -18,7 +18,7 @@ dll.window.Window = class Window {
 		// Title Bar
 		this.titlebar = document.createElement("div");
 		this.titlebar.classList.add("window-title");
-		this.titlebar.onmousedown = (e) => { if (e.button == 0) { windowDragEvent(e, this.window) } else if (e.button == 2) { dll.contextmenu.spawn(e) } }
+		this.titlebar.onmousedown = (e) => { if (e.button == 0) { windowDragEvent(e, this.window) } else if (e.button == 2) { dll.contextmenu.spawn(e, this.contextactions) } }
 		
 		// Title Bar > Title
 		this.titlebar.innerHTML += `<div class="window-title-title">${this.appdata.title}</div>`
