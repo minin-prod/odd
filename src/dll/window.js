@@ -14,12 +14,13 @@ dll.window.Window = class Window {
 		// Create Base Element
 		this.window = document.createElement("div");
 		this.window.classList.add("window");
+		this.window.onmousedown = (e) => this.MoveToFront(e);
 
 		// Title Bar
 		this.titlebar = document.createElement("div");
 		this.titlebar.classList.add("window-title");
 		this.titlebar.onmousedown = (e) => { if (e.button == 0) { windowDragEvent(e, this.window) } }
-		this.titlebar.onmouseup = (e) => { if (e.button == 2) { dll.contextmenu.spawn(e, this.contextactions) } }
+		this.titlebar.onmouseup = (e) => { if (e.button == 2) { dll.contextmenu.spawn(e, this.contextmenus.title) } }
 		
 		// Title Bar > Title
 		this.titlebar.innerHTML += `<div class="window-title-title">${this.appdata.title}</div>`
@@ -68,9 +69,12 @@ dll.window.Window = class Window {
 		// Move new Window to Front
 		this.MoveToFront();
 
-		// Attach Event Listeners
-		this.window.onmousedown = (e) => {
-			this.MoveToFront(e);
+		// Create Context Actions
+		this.contextmenus = {};
+		this.contextmenus.title = {
+			"Minimize": this.titlebar_buttons_min.onclick,
+			"Maximize": this.titlebar_buttons_max.onclick,
+			"Close": this.titlebar_buttons_close.onclick
 		}
 
 		// Initialize App
