@@ -117,8 +117,8 @@ body {
 }
 
 .control.icongrid-item > *:nth-child(1) {
-	width: 8vw;
-	height: 8vw;
+	width: 4em;
+	height: 4em;
 }
 
 .control.icongrid-item > *:nth-child(2) {
