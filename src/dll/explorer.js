@@ -3,6 +3,10 @@ dll.explorer = {};
 dll.explorer.init = (w) => {
 	let man = new dll.hdd.manager();
 
+	if (w.args.length > 0) {
+		man.cdlist(w.args);
+	}
+
 	let splitter = document.createElement("div");
 	splitter.classList.add("control", "splitter", "splitter-navbar");
 
@@ -26,20 +30,20 @@ dll.explorer.init = (w) => {
 	splitter.appendChild(navbar);
 
 	let container = document.createElement("div");
-	container.classList.add("control", "splitter", "splitter-sidebar");
+	container.classList.add("control", "flex");
 
-	let sidebar = document.createElement("div");
-	sidebar.classList.add("control", "list", "sidebar");
-	for (let i = 0; i < 20; i++) { sidebar.innerHTML += `<div class="control list-item">item ${i}</div>` }
-	container.appendChild(sidebar);
+	if (man.loc[0] != "settings") {
+		container.classList.add("splitter", "splitter-sidebar");
+
+		let sidebar = document.createElement("div");
+		sidebar.classList.add("control", "list", "sidebar");
+		for (let i = 0; i < 20; i++) { sidebar.innerHTML += `<div class="control list-item">item ${i}</div>` }
+		container.appendChild(sidebar);
+	}
 
 	let display = document.createElement("div");
 	display.classList.add("control", "icongrid");
 	container.appendChild(display);
-
-	if (w.args.length > 0) {
-		man.cdlist(w.args);
-	}
 
 	function update(display) {
 		display.innerHTML = "";

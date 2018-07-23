@@ -48,6 +48,10 @@ body {
 	display: block;
 }
 
+.control.flex {
+	display: flex;
+}
+
 .control.list > * {
 	padding: 0.2em 0.5em;
 	margin: 0.1em 0;
