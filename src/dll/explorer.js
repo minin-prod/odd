@@ -1,5 +1,13 @@
 dll.explorer = {};
 
+dll.explorer.settings_names = {
+	"time": "Date and Time"
+}
+
+dll.explorer.settings_icons = {
+	"time": "icon-clock"
+}
+
 dll.explorer.init = (w) => {
 	let man = new dll.hdd.manager();
 
@@ -57,14 +65,24 @@ dll.explorer.init = (w) => {
 	
 				{
 					let griditemIcon = document.createElement("div");
-					griditemIcon.classList.add("icon-folder");
+
+					if (man.loc[0] == "settings") {
+						griditemIcon.classList.add(dll.explorer.settings_icons[item]);
+					} else {
+						griditemIcon.classList.add("icon-folder");
+					}
 	
 					griditem.appendChild(griditemIcon);
 				}
 	
 				{
 					let griditemText = document.createElement("p");
-					griditemText.innerText = item;
+
+					if (man.loc[0] == "settings") {
+						griditemText.innerText = dll.explorer.settings_names[item];
+					} else {
+						griditemText.innerText = item;
+					}
 					
 					griditem.appendChild(griditemText);
 				}
