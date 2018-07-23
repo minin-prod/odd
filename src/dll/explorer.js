@@ -47,7 +47,7 @@ dll.explorer.init = (w) => {
 		address.innerText = man.loc.join("\\");
 
 		Object.keys(man.current).forEach((item) => {
-			if (item != "_type") {
+			if (!item.startsWith("_")) {
 				let griditem = document.createElement("div");
 				griditem.classList.add("control", "icongrid-item");
 	
@@ -67,10 +67,10 @@ dll.explorer.init = (w) => {
 
 				display.appendChild(griditem);
 	
-				griditem.addEventListener("click", (e) => {
+				griditem.onclick = (e) => {
 					man.cd(item);
 					update(display);
-				});
+				}
 			}
 		});
 	}

@@ -38,12 +38,15 @@ dll.hdd.fs = {
 		}
 	},
 	"settings": {
-		__type: "dir"
+		_type: "dir",
+		"time": {
+			_type: "dir"
+		}
 	}
 }
 
 dll.hdd.util = {
-	"isRoot": (loc) => { if (loc.length == 1 && loc[0] == "root") { return true } else { return false } },
+	"isRoot": (loc) => { if (loc.length == 1 && (loc[0] == "root" || loc[0] == "settings")) { return true } else { return false } },
 	"isEmpty": (loc) => { if (loc.length == 0) { return true } else { return false } }
 }
 
