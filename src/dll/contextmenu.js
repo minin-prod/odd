@@ -1,6 +1,6 @@
 dll.contextmenu = {};
 
-dll.contextmenu.Menu = class Menu extends dll.window.Window {
+dll.contextmenu.Menu = class extends dll.window.Window {
 	constructor(origin, options = {}, offset = { x: 0, y: 0 }) {
 		super(4, [], false);
 

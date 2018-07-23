@@ -44,7 +44,7 @@ dll.hdd.util = {
 	"isEmpty": (loc) => { if (loc.length == 0) { return true } else { return false } }
 }
 
-dll.hdd.manager = class Manager {
+dll.hdd.manager = class {
 	constructor() {
 		this.loc = ["root"];
 		this.current = dll.hdd.fs["root"];

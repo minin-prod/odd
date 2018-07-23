@@ -182,6 +182,7 @@ body {
 	min-width: 164px;
 	min-height: 41px;
 	background: #ddd;
+	box-shadow: 0 0.1em 1em 0px rgba(0, 0, 0, 0.5);
 	overflow: auto;
 	resize: both;
 }
@@ -242,6 +243,17 @@ body {
 	overflow: auto;
 }
 
+/* explorer */
+
+.app-2 .sidebar {
+	background: rgba(var(--accentRGBA), 0.05);
+}
+
+.app-2 .sidebar > *:hover {
+	background: rgba(var(--accentRGBA), 0.2);
+	color: var(--textColor);
+}
+
 /* context menu */
 
 .app-4 {
@@ -250,6 +262,7 @@ body {
 	max-height: 60vh;
 	resize: none;
 	background: transparent;
+	box-shadow: none;
 }
 
 .app-4 .window-title {
@@ -261,17 +274,6 @@ body {
 	height: 100%;
 	padding: 0.5em;
 	background: rgba(var(--accentRGBA), 0.5);
-	color: var(--textColor);
-}
-
-/* explorer */
-
-.app-2 .sidebar {
-	background: rgba(var(--accentRGBA), 0.05);
-}
-
-.app-2 .sidebar > *:hover {
-	background: rgba(var(--accentRGBA), 0.2);
 	color: var(--textColor);
 }
 
@@ -297,6 +299,7 @@ body {
 	left: 0 !important;
 	resize: none;
 	background: transparent;
+	box-shadow: none;
 }
 
 .window.start .window-title {

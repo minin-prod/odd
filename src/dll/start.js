@@ -1,6 +1,6 @@
 dll.start = {};
 
-dll.start.startMenu = class StartMenu extends dll.window.Window {
+dll.start.startMenu = class extends dll.window.Window {
 	constructor() {
 		super(1, [], false);
 

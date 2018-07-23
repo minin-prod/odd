@@ -1,6 +1,6 @@
 dll.window = {};
 
-dll.window.Window = class Window {
+dll.window.Window = class {
 	constructor(appid = "0", args = [], init = true) {
 		let body = document.getElementsByClassName("app")[0];
 		let apps = dll.app.apps;
