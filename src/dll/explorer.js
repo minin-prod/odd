@@ -47,7 +47,7 @@ dll.explorer.init = (w) => {
 		address.innerText = man.loc.join("\\");
 
 		Object.keys(man.current).forEach((item) => {
-			if (item != "type") {
+			if (item != "_type") {
 				let griditem = document.createElement("div");
 				griditem.classList.add("control", "icongrid-item");
 	

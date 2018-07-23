@@ -7,9 +7,13 @@ dll.taskbar.init = () => {
 
 	{
 		let dt = document.createElement("div");
-		dt.classList.add("time")
+		dt.classList.add("time");
 
 		sectionRight.appendChild(dt);
+
+		dt.addEventListener("click", (e) => {
+			new dll.window.Window(3, ["time"]);
+		});
 
 		dll.taskbar.timeService = setInterval(() => {
 			let t = new Date();

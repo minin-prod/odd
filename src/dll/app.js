@@ -42,7 +42,7 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "Configure your ODD workspace"
 		},
-		init: (w) => { },
+		init: (w) => { w.args.push("settings"); w.args.push(w.args.shift()); dll.explorer.init(w) },
 		content: ``
 	},
 	"contextmenu": {

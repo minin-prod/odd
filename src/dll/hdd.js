@@ -2,40 +2,43 @@ dll.hdd = {};
 
 dll.hdd.fs = {
 	"root": {
-		type: "dir",
+		_type: "dir",
 		"root": {
-			type: "dir"
+			_type: "dir"
 		},
 		"log": {
-			type: "dir"
+			_type: "dir"
 		},
 		"bin": {
-			type: "dir"
+			_type: "dir"
 		},
 		"lib": {
-			type: "dir"
+			_type: "dir"
 		},
 		"usr": {
-			type: "dir"
+			_type: "dir"
 		},
 		"home": {
-			type: "dir",
+			_type: "dir",
 			"libraries": {
-				type: "dir",
+				_type: "dir",
 				"Productivity": {
-					type: "dir"
+					_type: "dir"
 				},
 				"Programming": {
-					type: "dir"
+					_type: "dir"
 				},
 				"Tools": {
-					type: "dir"
+					_type: "dir"
 				},
 				"Games": {
-					type: "dir"
+					_type: "dir"
 				}
 			}
 		}
+	},
+	"settings": {
+		__type: "dir"
 	}
 }
 
@@ -80,7 +83,7 @@ dll.hdd.manager = class {
 				this.current = this.current[dir];
 			});
 
-			if (this.current.type != "dir") {
+			if (this.current["_type"] != "dir") {
 				this.loc.pop();
 			} else {
 				x = false;
