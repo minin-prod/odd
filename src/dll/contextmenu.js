@@ -1,13 +1,13 @@
 dll.contextmenu = {};
 
 dll.contextmenu.Menu = class Menu extends dll.window.Window {
-	constructor(e, options = {}) {
+	constructor(origin, options = {}) {
 		super(4, [], false);
 
 		this.options = options;
 
-		this.window.style.top = `${e.clientY - 40}px`;
-		this.window.style.left = `${e.clientX}px`;
+		this.window.style.top = `${origin.clientY - 40}px`;
+		this.window.style.left = `${origin.clientX}px`;
 
 		this.MoveToFront();
 
@@ -25,6 +25,15 @@ dll.contextmenu.Menu = class Menu extends dll.window.Window {
 		});
 
 		this.content.appendChild(this.optionsContainer);
+
+		document.addEventListener("mouseup", contextup);
+
+		function contextup(e) {
+			if (e == origin) return;
+
+			document.removeEventListener("mouseup", contextup);
+			document.getElementsByClassName("app-4")[0].remove();
+		}
 	}
 }
 
