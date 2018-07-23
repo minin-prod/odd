@@ -24,6 +24,30 @@ new Promise((result, reject) => {
 		layerNav.appendChild(navbar);
 	}
 
+	{
+		let desktopmenu = {
+			"New File": undefined,
+			"New Folder": undefined,
+			"Refresh": undefined
+		}
+
+		let navmenu = {
+			"Settings": undefined,
+			"Process Manager": undefined,
+			"Window Manager": undefined
+		}
+
+		layerNav.onmouseup = (e) => {
+			if (e.button == 2) {
+				if (e.target.attributes.class.nodeValue == "section mid") {
+					dll.contextmenu.spawn(e, navmenu, { x: 0, y: 30 });
+				} else {
+					dll.contextmenu.spawn(e, desktopmenu);
+				}
+			}
+		}
+	}
+
 	result(container);
 }).then((res, err) => {
 	dll.appearance.init();

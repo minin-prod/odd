@@ -1,13 +1,13 @@
 dll.contextmenu = {};
 
 dll.contextmenu.Menu = class Menu extends dll.window.Window {
-	constructor(origin, options = {}) {
+	constructor(origin, options = {}, offset = { x: 0, y: 0 }) {
 		super(4, [], false);
 
 		this.options = options;
 
-		this.window.style.top = `${origin.clientY - 40}px`;
-		this.window.style.left = `${origin.clientX}px`;
+		this.window.style.top = `${(origin.clientY - 40) + offset.y}px`;
+		this.window.style.left = `${origin.clientX + offset.x}px`;
 
 		this.MoveToFront();
 
@@ -37,6 +37,6 @@ dll.contextmenu.Menu = class Menu extends dll.window.Window {
 	}
 }
 
-dll.contextmenu.spawn = (e, options) => {
-	return new dll.contextmenu.Menu(e, options);
+dll.contextmenu.spawn = (e, options, offset = undefined) => {
+	return new dll.contextmenu.Menu(e, options, offset);
 }
