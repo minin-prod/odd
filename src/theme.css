@@ -167,6 +167,8 @@ body {
 
 .icon-folder { -webkit-mask: url("./img/folder.svg") center / contain no-repeat; mask: url("./img/folder.svg") center / contain no-repeat; background: var(--accent); }
 
+.icon-clock { -webkit-mask: url("./img/time.svg") center / contain no-repeat; mask: url("./img/time.svg") center / contain no-repeat; background: var(--accent); }
+
 .icon-up { background: url("./img/up.png"); }
 
 /* windows */
