@@ -23,6 +23,12 @@ dll.start.startMenu = class extends dll.window.Window {
 			<div class="control divider"></div>
 
 			<div class="control list">
+				<div class="control list-item">About</div>
+			</div>
+
+			<div class="control divider"></div>
+
+			<div class="control list">
 				<div class="control list-item">Shutdown</div>
 				<div class="control list-item">Restart</div>
 				<div class="control list-item">Logout</div>
@@ -56,6 +62,8 @@ dll.start.init = () => {
 			new dll.window.Window(2, ["root"]);
 		} else if (e.target.innerText == "Settings") {
 			new dll.window.Window(3);
+		} else if (e.target.innerText == "About") {
+			new dll.window.Window(5);
 		} else {
 			new dll.window.Window(2, ["root", "home", "libraries", e.target.innerText]);
 		}

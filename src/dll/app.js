@@ -5,7 +5,8 @@ dll.app.apps = {
 	"1": "startmenu",
 	"2": "explorer",
 	"3": "settings",
-	"4": "contextmenu"
+	"4": "contextmenu",
+	"5": "about"
 }
 
 dll.app.appdata = {
@@ -19,11 +20,7 @@ dll.app.appdata = {
 		content: `NULL`
 	},
 	"startmenu": {
-		title: "START",
-		meta: {
-			author: "Minin Productions",
-			description: "Start Menu"
-		},
+		title: "",
 		init: (w) => { },
 		content: ``
 	},
@@ -49,5 +46,14 @@ dll.app.appdata = {
 		title: "",
 		init: (w) => { },
 		content: ``
+	},
+	"about": {
+		title: "About",
+		meta: {
+			author: "Minin Productions",
+			description: "About your ODD workspace"
+		},
+		init: (w) => { },
+		content: `<center><a href="https://icons8.com">Icon pack by Icons8</a></center>`
 	}
 }
