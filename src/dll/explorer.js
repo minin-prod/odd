@@ -56,7 +56,7 @@ dll.explorer.init = (w) => {
 	function update(display, psuedomode = false, psuedoquery = undefined) {
 		display.innerHTML = "";
 		
-		address.innerText = man.loc.join("\\");
+		if (!psuedomode) address.innerText = man.loc.join("\\");
 
 		Object.keys(man.current).forEach((item) => {
 			let pseudomatch = false;
@@ -127,8 +127,9 @@ dll.explorer.init = (w) => {
 
 			if (item == "_pseudo" && !psuedomode) {
 				let query = man.current["_pseudo"];
+				let querylocaction = man.current["_pseudolocation"];
 
-				man.cdlist(["root", "bin"]);
+				man.cdlist(querylocaction);
 				update(display, true, query);
 			}
 		});

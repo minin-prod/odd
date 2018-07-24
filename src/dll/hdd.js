@@ -37,19 +37,23 @@ dll.hdd.fs = {
 				_type: "dir",
 				"Productivity": {
 					_type: "dir",
-					_pseudo: "Productivity"
+					_pseudo: "Productivity",
+					_pseudolocation: ["root", "bin"]
 				},
 				"Programming": {
 					_type: "dir",
-					_pseudo: "Programming"
+					_pseudo: "Programming",
+					_pseudolocation: ["root", "bin"]
 				},
 				"Tools": {
 					_type: "dir",
-					_pseudo: "Tools"
+					_pseudo: "Tools",
+					_pseudolocation: ["root", "bin"]
 				},
 				"Games": {
 					_type: "dir",
-					_pseudo: "Games"
+					_pseudo: "Games",
+					_pseudolocation: ["root", "bin"]
 				}
 			}
 		}
