@@ -165,9 +165,13 @@ body {
 	background-size: cover !important;
 }
 
-.icon-folder { -webkit-mask: url("./img/folder.svg") center / contain no-repeat; mask: url("./img/folder.svg") center / contain no-repeat; background: var(--accent); }
+.icon-folder { -webkit-mask: url("./img/explorer/folder.svg") center / contain no-repeat; mask: url("./img/explorer/folder.svg") center / contain no-repeat; background: var(--accent); }
 
-.icon-clock { -webkit-mask: url("./img/time.svg") center / contain no-repeat; mask: url("./img/time.svg") center / contain no-repeat; background: var(--accent); }
+.icon-file { -webkit-mask: url("./img/explorer/file.svg") center / contain no-repeat; mask: url("./img/explorer/file.svg") center / contain no-repeat; background: var(--accent); }
+
+.icon-exe { -webkit-mask: url("./img/explorer/exe.png") center / contain no-repeat; mask: url("./img/explorer/exe.png") center / contain no-repeat; background: var(--accent); }
+
+.icon-clock { -webkit-mask: url("./img/settings/time.svg") center / contain no-repeat; mask: url("./img/settings/time.svg") center / contain no-repeat; background: var(--accent); }
 
 .icon-up { background: url("./img/up.png"); }
 

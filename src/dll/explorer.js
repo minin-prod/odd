@@ -69,7 +69,18 @@ dll.explorer.init = (w) => {
 					if (man.loc[0] == "settings") {
 						griditemIcon.classList.add(dll.explorer.settings_icons[item]);
 					} else {
-						griditemIcon.classList.add("icon-folder");
+						if (man.current[item]["_type"] == "file") {
+							let filetype = item.split(".")[item.split(".").length - 1];
+
+							switch (filetype) {
+								case "exe": griditemIcon.classList.add("icon-exe"); break;
+							
+								default:
+									griditemIcon.classList.add("icon-file");
+							}
+						} else if (man.current[item]["_type"] == "dir") {
+							griditemIcon.classList.add("icon-folder");
+						}
 					}
 	
 					griditem.appendChild(griditemIcon);
@@ -90,8 +101,19 @@ dll.explorer.init = (w) => {
 				display.appendChild(griditem);
 	
 				griditem.onclick = (e) => {
-					man.cd(item);
-					update(display);
+					if (man.current[item]["_type"] == "file") {
+						let filetype = item.split(".")[item.split(".").length - 1];
+
+						switch (filetype) {
+							case "exe": console.log("start app"); break;
+						
+							default:
+								console.log("start open with dialog");
+						}
+					} else if (man.current[item]["_type"] == "dir") {
+						man.cd(item);
+						update(display);
+					}
 				}
 			}
 		});
