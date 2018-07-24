@@ -37,10 +37,21 @@ new Promise((result, reject) => {
 			"Window Manager": undefined
 		}
 
+		let timemenu = {
+			"Date and Time": undefined,
+			"Settings": undefined,
+			"Process Manager": undefined,
+			"Window Manager": undefined
+		}
+
 		layerNav.onmouseup = (e) => {
 			if (e.button == 2) {
 				if (e.target.attributes.class.nodeValue == "section mid") {
 					dll.contextmenu.spawn(e, navmenu, { x: 0, y: 30 });
+				} else if (e.target.attributes.class.nodeValue == "time") {
+					dll.contextmenu.spawn(e, timemenu, { x: 0, y: 30 });
+				} else if (e.target.attributes.class.nodeValue == "start") {
+					// no
 				} else {
 					dll.contextmenu.spawn(e, desktopmenu);
 				}
