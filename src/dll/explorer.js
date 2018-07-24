@@ -105,10 +105,10 @@ dll.explorer.init = (w) => {
 						let filetype = item.split(".")[item.split(".").length - 1];
 
 						switch (filetype) {
-							case "exe": console.log("start app"); break;
+							case "exe": new dll.window.Window("-1", [], true, man.current[item].appdata); break;
 						
 							default:
-								console.log("start open with dialog");
+								new dll.window.Window(0);
 						}
 					} else if (man.current[item]["_type"] == "dir") {
 						man.cd(item);
