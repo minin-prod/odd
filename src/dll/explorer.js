@@ -53,13 +53,21 @@ dll.explorer.init = (w) => {
 	display.classList.add("control", "icongrid");
 	container.appendChild(display);
 
-	function update(display) {
+	function update(display, psuedomode = false, psuedoquery = undefined) {
 		display.innerHTML = "";
 		
 		address.innerText = man.loc.join("\\");
 
 		Object.keys(man.current).forEach((item) => {
-			if (!item.startsWith("_")) {
+			let pseudomatch = false;
+
+			if (psuedomode) {
+				pseudomatch = (man.current[item]["_pseudoname"] == psuedoquery);
+			} else {
+				pseudomatch = true;
+			}
+
+			if (pseudomatch && !item.startsWith("_")) {
 				let griditem = document.createElement("div");
 				griditem.classList.add("control", "icongrid-item");
 	
@@ -115,6 +123,13 @@ dll.explorer.init = (w) => {
 						update(display);
 					}
 				}
+			}
+
+			if (item == "_pseudo" && !psuedomode) {
+				let query = man.current["_pseudo"];
+
+				man.cdlist(["root", "bin"]);
+				update(display, true, query);
 			}
 		});
 	}

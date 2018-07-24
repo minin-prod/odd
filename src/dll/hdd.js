@@ -13,12 +13,12 @@ dll.hdd.fs = {
 			_type: "dir",
 			"cmd.exe": {
 				_type: "file",
+				_pseudoname: "Programming",
 				appdata: {
 					title: "Command Prompt",
 					meta: {
 						author: "Minin Productions",
-						description: "Command prompt utility",
-						catagory: "Programming"
+						description: "Command prompt utility"
 					},
 					init: (w) => { dll.cmd.init(w) },
 					content: ``
@@ -36,16 +36,20 @@ dll.hdd.fs = {
 			"libraries": {
 				_type: "dir",
 				"Productivity": {
-					_type: "dir"
+					_type: "dir",
+					_pseudo: "Productivity"
 				},
 				"Programming": {
-					_type: "dir"
+					_type: "dir",
+					_pseudo: "Programming"
 				},
 				"Tools": {
-					_type: "dir"
+					_type: "dir",
+					_pseudo: "Tools"
 				},
 				"Games": {
-					_type: "dir"
+					_type: "dir",
+					_pseudo: "Games"
 				}
 			}
 		}
