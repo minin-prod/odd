@@ -10,7 +10,18 @@ dll.hdd.fs = {
 			_type: "dir"
 		},
 		"bin": {
-			_type: "dir"
+			_type: "dir",
+			"cmd.exe": {
+				_type: "file",
+				title: "Command Prompt",
+				meta: {
+					author: "Minin Productions",
+					description: "Command prompt utility",
+					catagory: "Programming"
+				},
+				init: (w) => { dll.cmd.init(w) },
+				content: ``
+			}
 		},
 		"lib": {
 			_type: "dir"
