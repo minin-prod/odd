@@ -140,10 +140,6 @@ body {
 	transition: background 0.1s;
 }
 
-.control.button:hover {
-	background-color: rgba(255, 255, 255, 0.2);
-}
-
 .button.button-small {
 	width: 1.3em;
 	height: 1.3em;
@@ -230,7 +226,7 @@ body {
 	background-color: rgba(255, 255, 255, 0);
 }
 
-.window .window-title-buttons *:hover {
+.control.button:hover, .window .window-title-buttons *:hover {
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
