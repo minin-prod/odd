@@ -387,9 +387,11 @@ body {
 }
 
 .nav nav .mid {
+	padding: none;
 	text-align: left;
 	flex: 1;
 	justify-content: left;
+	overflow-y: auto;
 }
 
 .nav nav .right {
