@@ -52,10 +52,6 @@ new Promise((result, reject) => {
 				let classes = e.target.attributes.class.nodeValue;
 
 				switch (classes) {
-					case "section mid":
-						dll.contextmenu.spawn(e, navmenu, { x: 0, y: 20 });
-						break;
-
 					case "time":
 						dll.contextmenu.spawn(e, timemenu, { x: 0, y: 20 });
 						break;
@@ -65,6 +61,12 @@ new Promise((result, reject) => {
 					default:
 						if (classes.endsWith(" control hlist-item")) {
 							dll.contextmenu.spawn(e, utilGETWINMENU(layerApp.getElementsByClassName("window")[parseInt(classes.split(" ")[0])]), { x: 0, y: 20 });
+
+							break;
+						}
+
+						if (classes.startsWith("section ")) {
+							dll.contextmenu.spawn(e, navmenu, { x: 0, y: 20 });
 
 							break;
 						}

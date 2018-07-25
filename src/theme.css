@@ -60,10 +60,15 @@ body {
 	border-radius: 0;
 }
 
-.control.list > *:not(.divider):hover { background: rgba(var(--accentRGBA), 0.2); }
-.control.list > *:not(.divider).focus { background: rgba(var(--accentRGBA), 0.2); }
-.control.list.light > *:not(.divider):hover { background-color: rgba(255, 255, 255, 0.2); }
-.control.list.light > *:not(.divider).focus { background-color: rgba(255, 255, 255, 0.2); }
+.control.list > *:hover { background: rgba(var(--accentRGBA), 0.2); }
+.control.list > *.focus { background: rgba(var(--accentRGBA), 0.2); }
+.control.list.light > *:hover { background-color: rgba(255, 255, 255, 0.2); }
+.control.list.light > *.focus { background-color: rgba(255, 255, 255, 0.2); }
+
+.control.list.paralax > *:hover { background: rgba(var(--accentRGBA), 0.1); }
+.control.list.paralax > *.focus { background: rgba(var(--accentRGBA), 0.2); }
+.control.list.light.paralax > *:hover { background-color: rgba(255, 255, 255, 0.1); }
+.control.list.light.paralax> *.focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.hlist {
 	height: 100%;
@@ -83,6 +88,11 @@ body {
 .control.hlist > *.focus { background: rgba(var(--accentRGBA), 0.2); }
 .control.hlist.light > *:hover { background-color: rgba(255, 255, 255, 0.2); }
 .control.hlist.light > *.focus { background-color: rgba(255, 255, 255, 0.2); }
+
+.control.hlist.paralax > *:hover { background: rgba(var(--accentRGBA), 0.1); }
+.control.hlist.paralax > *.focus { background: rgba(var(--accentRGBA), 0.2); }
+.control.hlist.light.paralax > *:hover { background-color: rgba(255, 255, 255, 0.1); }
+.control.hlist.light.paralax> *.focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.divider {
 	width: calc(100% - 0.8em);

@@ -15,7 +15,13 @@ dll.taskbar.update = () => {
 
 			if (win.classList.contains("focus")) item.classList.add("focus");
 
-			item.onclick = win.onmousedown;
+			item.onclick = () => {
+				if (item.classList.contains("focus")) {
+					utilGETWINTB(win).children[0].onclick();
+				} else {
+					win.onmousedown();
+				}
+			};
 
 			dll.taskbar.windowview.appendChild(item);
 		}
@@ -46,8 +52,12 @@ dll.taskbar.init = () => {
 
 	{
 		dll.taskbar.windowview = document.createElement("div");
-		dll.taskbar.windowview.classList.add("control", "hlist", "light");
+		dll.taskbar.windowview.classList.add("control", "hlist", "light", "paralax");
 
 		sectionMid.appendChild(dll.taskbar.windowview);
 	}
+}
+
+function utilGETWINTB(win) {
+	return win.children[0].children[1];
 }

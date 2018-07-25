@@ -32,7 +32,7 @@ dll.window.Window = class {
 		// Title Bar > Actions > Minimize
 		this.titlebar_buttons_min = document.createElement("div");
 		this.titlebar_buttons_min.classList.add("window-title-buttons-min");
-		this.titlebar_buttons_min.onclick = () => this.window.classList.toggle("minimized");
+		this.titlebar_buttons_min.onclick = () => { this.window.classList.toggle("minimized"); this.window.classList.remove("focus"); dll.taskbar.update() };
 
 		// Title Bar > Actions > Maximize
 		this.titlebar_buttons_max = document.createElement("div");
@@ -88,6 +88,8 @@ dll.window.Window = class {
 	 */
 	MoveToFront() {
 		let max = 0;
+
+		this.window.classList.remove("minimized");
 
 		Array.prototype.forEach.call(document.getElementById("odd-container").getElementsByClassName("app")[0].getElementsByClassName("window"), (x) => {
 			x.classList.remove("focus");
