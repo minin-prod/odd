@@ -13,6 +13,8 @@ dll.taskbar.update = () => {
 			item.classList.add("control", "hlist-item");
 			item.innerText = win.children[0].children[0].innerText;
 
+			item.onclick = win.onmousedown;
+
 			dll.taskbar.windowview.appendChild(item);
 		}
 	}

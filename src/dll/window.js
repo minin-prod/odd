@@ -42,7 +42,7 @@ dll.window.Window = class {
 		// Title Bar > Actions > Close
 		this.titlebar_buttons_close = document.createElement("div");
 		this.titlebar_buttons_close.classList.add("window-title-buttons-close");
-		this.titlebar_buttons_close.onclick = () => this.window.remove();
+		this.titlebar_buttons_close.onclick = () => { this.window.remove(); dll.taskbar.update() };
 
 		// Window Content
 		this.content = document.createElement("div");
