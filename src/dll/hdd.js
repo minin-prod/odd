@@ -20,13 +20,19 @@ dll.hdd.fs = {
 						author: "Minin Productions",
 						description: "Command prompt utility"
 					},
-					init: (w) => { dll.cmd.init(w) },
+					init: (w) => { dll.lib.get("cmd.dll"); dll.cmd.init(w) },
 					content: ``
 				}
 			}
 		},
 		"lib": {
-			_type: "dir"
+			_type: "dir",
+			"cmd.dll": {
+				_type: "file",
+				init: (w) => { /* init cmd window */ },
+				Command: class { /* command handler commands */ },
+				commands: {}
+			}
 		},
 		"usr": {
 			_type: "dir"
