@@ -10,7 +10,7 @@ dll.taskbar.update = () => {
 
 		if (!win.classList.contains("app-1") && !win.classList.contains("app-4") ) {
 			let item = document.createElement("div");
-			item.classList.add("control", "hlist-item");
+			item.classList.add(i, "control", "hlist-item");
 			item.innerText = win.children[0].children[0].innerText;
 
 			if (win.classList.contains("focus")) item.classList.add("focus");

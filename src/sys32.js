@@ -28,32 +28,48 @@ new Promise((result, reject) => {
 		let desktopmenu = {
 			"New File": undefined,
 			"New Folder": undefined,
+			"---": "---",
 			"Refresh": undefined
 		}
 
 		let navmenu = {
-			"Settings": undefined,
 			"Process Manager": undefined,
-			"Window Manager": undefined
+			"Window Manager": undefined,
+			"---": "---",
+			"Settings": undefined
 		}
 
 		let timemenu = {
-			"Date and Time": undefined,
-			"Settings": undefined,
 			"Process Manager": undefined,
-			"Window Manager": undefined
+			"Window Manager": undefined,
+			"---": "---",
+			"Date and Time": undefined,
+			"Settings": undefined
 		}
 
 		layerNav.onmouseup = (e) => {
 			if (e.button == 2) {
-				if (e.target.attributes.class.nodeValue == "section mid") {
-					dll.contextmenu.spawn(e, navmenu, { x: 0, y: 30 });
-				} else if (e.target.attributes.class.nodeValue == "time") {
-					dll.contextmenu.spawn(e, timemenu, { x: 0, y: 30 });
-				} else if (e.target.attributes.class.nodeValue == "start") {
-					// no
-				} else {
-					dll.contextmenu.spawn(e, desktopmenu);
+				let classes = e.target.attributes.class.nodeValue;
+
+				switch (classes) {
+					case "section mid":
+						dll.contextmenu.spawn(e, navmenu, { x: 0, y: 20 });
+						break;
+
+					case "time":
+						dll.contextmenu.spawn(e, timemenu, { x: 0, y: 20 });
+						break;
+
+					case "start": break;
+
+					default:
+						if (classes.endsWith(" control hlist-item")) {
+							dll.contextmenu.spawn(e, utilGETWINMENU(layerApp.getElementsByClassName("window")[parseInt(classes.split(" ")[0])]), { x: 0, y: 20 });
+
+							break;
+						}
+
+						dll.contextmenu.spawn(e, desktopmenu);
 				}
 			}
 		}
@@ -70,3 +86,11 @@ new Promise((result, reject) => {
 	console.error(err);
 	alert("An error occured while loading, reload the page or check the debug console for specifics on the error.");
 });
+
+function utilGETWINMENU(win) {
+	return {
+		"Minimize": win.children[0].children[1].children[0].onclick,
+		"Maximize": win.children[0].children[1].children[1].onclick,
+		"Close": win.children[0].children[1].children[2].onclick
+	}
+}

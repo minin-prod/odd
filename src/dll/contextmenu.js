@@ -16,10 +16,16 @@ dll.contextmenu.Menu = class extends dll.window.Window {
 
 		Object.keys(options).forEach((option) => {
 			let item = document.createElement("div");
-			item.classList.add("control", "list-item");
-			item.innerText = option;
+			item.classList.add("control");
 
-			item.addEventListener("mouseup", options[option]);
+			if (option != "---") {
+				item.classList.add("list-item");
+				item.innerText = option;
+	
+				item.addEventListener("mouseup", options[option]);
+			} else {
+				item.classList.add("divider");
+			}
 
 			this.optionsContainer.appendChild(item);
 		});
