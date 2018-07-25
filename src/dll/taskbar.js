@@ -42,7 +42,7 @@ dll.taskbar.init = () => {
 
 	{
 		dll.taskbar.windowview = document.createElement("div");
-		dll.taskbar.windowview.classList.add("control", "hlist");
+		dll.taskbar.windowview.classList.add("control", "hlist", "light");
 
 		sectionMid.appendChild(dll.taskbar.windowview);
 	}

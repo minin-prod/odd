@@ -80,6 +80,7 @@ dll.window.Window = class {
 		// Initialize App
 		body.appendChild(this.window);
 		if (init) this.appdata.init(this);
+		dll.taskbar.update();
 	}
 
 	/**

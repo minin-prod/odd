@@ -64,6 +64,28 @@ body {
 	background: rgba(var(--accentRGBA), 0.3);
 }
 
+.control.hlist {
+	height: 100%;
+}
+
+.control.hlist > * {
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	padding: 0 0.5em;
+	background: rgba(var(--accentRGBA), 0);
+	transition: background 0.1s;
+	border-radius: 0;
+}
+
+.control.hlist > *:hover {
+	background: rgba(var(--accentRGBA), 0.3);
+}
+
+.control.hlist.light > *:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
 .control.divider {
 	width: calc(100% - 0.8em);
 	height: 1px;
