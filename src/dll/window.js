@@ -131,9 +131,12 @@ function windowDragEvent(e, window) {
 		pos3 = e.clientX;
 		pos4 = e.clientY;
 
+		let ny = window.offsetTop - pos2;
+		let nx = window.offsetLeft - pos1;
+
 		// Move to New Mouse Position
-		window.style.top = (window.offsetTop - pos2) + "px";
-		window.style.left = (window.offsetLeft - pos1) + "px";
+		window.style.top = (ny >= 0 ? ny : 0) + "px";
+		window.style.left = (nx >= 0 ? nx : 0) + "px";
 	}
 
 	function closeDrag() {
