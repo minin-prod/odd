@@ -52,7 +52,7 @@ body {
 	display: flex;
 }
 
-.control.list > * {
+.control.list > *:not(.divider) {
 	padding: 0.2em 0.5em;
 	margin: 0.1em 0;
 	background: rgba(var(--accentRGBA), 0);
@@ -60,10 +60,10 @@ body {
 	border-radius: 0;
 }
 
-.control.list > *:hover { background: rgba(var(--accentRGBA), 0.2); }
-.control.list > *.focus { background: rgba(var(--accentRGBA), 0.2); }
-.control.list.light > *:hover { background-color: rgba(255, 255, 255, 0.2); }
-.control.list.light > *.focus { background-color: rgba(255, 255, 255, 0.2); }
+.control.list > *:not(.divider):hover { background: rgba(var(--accentRGBA), 0.2); }
+.control.list > *:not(.divider).focus { background: rgba(var(--accentRGBA), 0.2); }
+.control.list.light > *:not(.divider):hover { background-color: rgba(255, 255, 255, 0.2); }
+.control.list.light > *:not(.divider).focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.hlist {
 	height: 100%;

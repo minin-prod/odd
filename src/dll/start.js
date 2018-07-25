@@ -18,17 +18,13 @@ dll.start.startMenu = class extends dll.window.Window {
 				<div class="control list-item">Games</div>
 				<div class="control list-item">File Manager</div>
 				<div class="control list-item">Settings</div>
-			</div>
 
-			<div class="control divider"></div>
+				<div class="control divider"></div>
 
-			<div class="control list light">
 				<div class="control list-item">About</div>
-			</div>
 
-			<div class="control divider"></div>
+				<div class="control divider"></div>
 
-			<div class="control list light">
 				<div class="control list-item">Shutdown</div>
 				<div class="control list-item">Restart</div>
 				<div class="control list-item">Logout</div>
