@@ -60,9 +60,10 @@ body {
 	border-radius: 0;
 }
 
-.control.list > *:hover {
-	background: rgba(var(--accentRGBA), 0.3);
-}
+.control.list > *:hover { background: rgba(var(--accentRGBA), 0.2); }
+.control.list > *.focus { background: rgba(var(--accentRGBA), 0.2); }
+.control.list.light > *:hover { background-color: rgba(255, 255, 255, 0.2); }
+.control.list.light > *.focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.hlist {
 	height: 100%;
@@ -78,10 +79,9 @@ body {
 	border-radius: 0;
 }
 
-.control.hlist > *:hover { background: rgba(var(--accentRGBA), 0.1); }
+.control.hlist > *:hover { background: rgba(var(--accentRGBA), 0.2); }
 .control.hlist > *.focus { background: rgba(var(--accentRGBA), 0.2); }
-
-.control.hlist.light > *:hover { background-color: rgba(255, 255, 255, 0.1); }
+.control.hlist.light > *:hover { background-color: rgba(255, 255, 255, 0.2); }
 .control.hlist.light > *.focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.divider {
@@ -387,7 +387,7 @@ body {
 }
 
 .nav nav .mid {
-	padding: none;
+	padding: 0;
 	text-align: left;
 	flex: 1;
 	justify-content: left;
