@@ -29,7 +29,7 @@ dll.hdd.fs = {
 			_type: "dir",
 			"cmd.dll": {
 				_type: "file",
-				init: (w) => { /* init cmd window */ },
+				init: (w) => { if (Object.keys(dll.cmd.commands).length == 0) { dll.cmd.commands.echo = new dll.cmd.Command((args) => { return args.join(" "); }) } let wrapper = document.createElement("div"); wrapper.classList.add("control", "f"); wrapper.style.backgroundColor = w.window.style.backgroundColor = "#111"; w.content.appendChild(wrapper); },
 				Command: class { /* command handler commands */ },
 				commands: {}
 			}
