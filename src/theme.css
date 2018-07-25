@@ -48,14 +48,11 @@ body {
 	display: block;
 }
 
-.control.flex, .control.fflex {
-	display: flex;
-}
+.control.flex { display: flex; }
+.control.fw, .control.f { width: 100%; }
+.control.fh, .control.f { height: 100%; }
 
-.control.f, .control.fflex {
-	width: 100%;
-	height: 100%;
-}
+.f1 { flex: 1; }
 
 .control.list > *:not(.divider) {
 	padding: 0.2em 0.5em;
