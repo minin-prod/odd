@@ -12,7 +12,7 @@ dll.contextmenu.Menu = class extends dll.window.Window {
 		this.MoveToFront();
 
 		this.optionsContainer = document.createElement("div");
-		this.optionsContainer.classList.add("control", "list");
+		this.optionsContainer.classList.add("control", "list", "light");
 
 		Object.keys(options).forEach((option) => {
 			let item = document.createElement("div");

@@ -11,7 +11,7 @@ dll.start.startMenu = class extends dll.window.Window {
 		}
 
 		this.content.innerHTML = `
-			<div class="control list">
+			<div class="control list light">
 				<div class="control list-item">Productivity</div>
 				<div class="control list-item">Programming</div>
 				<div class="control list-item">Tools</div>
@@ -22,13 +22,13 @@ dll.start.startMenu = class extends dll.window.Window {
 
 			<div class="control divider"></div>
 
-			<div class="control list">
+			<div class="control list light">
 				<div class="control list-item">About</div>
 			</div>
 
 			<div class="control divider"></div>
 
-			<div class="control list">
+			<div class="control list light">
 				<div class="control list-item">Shutdown</div>
 				<div class="control list-item">Restart</div>
 				<div class="control list-item">Logout</div>
