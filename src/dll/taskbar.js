@@ -5,13 +5,15 @@ dll.taskbar.update = () => {
 
 	dll.taskbar.windowview.innerHTML = "";
 	
-	for (let i = 0; i < layerApp.children.length; i++) {
-		let win = layerApp.children[i];
+	for (let i = 0; i < layerApp.getElementsByClassName("window").length; i++) {
+		let win = layerApp.getElementsByClassName("window")[i];
 
 		if (!win.classList.contains("app-1") && !win.classList.contains("app-4") ) {
 			let item = document.createElement("div");
 			item.classList.add("control", "hlist-item");
 			item.innerText = win.children[0].children[0].innerText;
+
+			if (win.classList.contains("focus")) item.classList.add("focus");
 
 			item.onclick = win.onmousedown;
 

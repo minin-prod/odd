@@ -78,13 +78,11 @@ body {
 	border-radius: 0;
 }
 
-.control.hlist > *:hover {
-	background: rgba(var(--accentRGBA), 0.3);
-}
+.control.hlist > *:hover { background: rgba(var(--accentRGBA), 0.1); }
+.control.hlist > *.focus { background: rgba(var(--accentRGBA), 0.2); }
 
-.control.hlist.light > *:hover {
-	background-color: rgba(255, 255, 255, 0.2);
-}
+.control.hlist.light > *:hover { background-color: rgba(255, 255, 255, 0.1); }
+.control.hlist.light > *.focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.divider {
 	width: calc(100% - 0.8em);

@@ -89,13 +89,17 @@ dll.window.Window = class {
 	MoveToFront() {
 		let max = 0;
 
-		Array.prototype.forEach.call(document.getElementsByClassName("app")[0].getElementsByClassName("window"), (x) => {
+		Array.prototype.forEach.call(document.getElementById("odd-container").getElementsByClassName("app")[0].getElementsByClassName("window"), (x) => {
+			x.classList.remove("focus");
+
 			let z = x.style.zIndex;
 			
 			max = Math.max(max, z);
 		});
 
 		this.window.style.zIndex = max + 1;
+		this.window.classList.add("focus");
+		dll.taskbar.update();
 	}
 }
 
