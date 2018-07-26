@@ -56,7 +56,7 @@ dll.explorer.init = (w) => {
 	function update(display, psuedomode = false, psuedoquery = undefined) {
 		display.innerHTML = "";
 		
-		if (!psuedomode) address.innerText = man.loc.join("\\");
+		if (!psuedomode) address.innerText = man.loc.join("/");
 
 		Object.keys(man.current).forEach((item) => {
 			let pseudomatch = false;

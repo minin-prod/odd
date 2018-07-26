@@ -3,6 +3,7 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 	init: (w) => {
 		if (Object.keys(dll.cmd.commands).length == 0) {
 			dll.cmd.commands.echo = new dll.cmd.Command((args) => { return args.join(" "); });
+			dll.cmd.commands.clear = new dll.cmd.Command((args) => { history.innerHTML = "" });
 		}
 
 		let man = new dll.hdd.manager();
@@ -10,7 +11,7 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 		let wrapper = document.createElement("div");
 		let container = document.createElement("div");
 
-		let history = document.createElement("div"); history.innerHTML = "<br>";
+		let history = document.createElement("div"); history.innerHTML = "<p>ODD Command Prompt</p><br>";
 
 		let inf = document.createElement("form");
 		let path = document.createElement("label");
@@ -39,7 +40,7 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 
 			path.style.fontFamily = "FiraMono";
 			path.style.cursor = "text";
-			path.innerHTML = "root/ $";
+			path.innerHTML = "root $";
 		}
 
 		{
@@ -64,6 +65,8 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 						output = `Invalid command "${command}" specified.`;
 					}
 
+					path.innerText = `${man.loc.join("/")} $`;
+
 					history.innerHTML += `<p>${output}</p><br>`;
 
 					w.content.scroll(0, history.clientHeight + inf.clientHeight + (16 * 2));
@@ -82,6 +85,8 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 
 			w.content.appendChild(container);
 		}
+
+		inp.focus();
 	},
 	Command: class {
 		constructor(action = (args) => {}, description = "null") {
