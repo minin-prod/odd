@@ -19,6 +19,17 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 					return "cat: Invalid file path"
 				}
 			});
+			dll.cmd.commands.cd = new dll.cmd.Command((args) => {
+				if (args[0] == undefined) return "cd: Enter a directory";
+
+				if (Object.keys(man.current).includes(args[0]) || args[0] == "..") {
+					man.cd(args[0]);
+				} else {
+					return "cd: Invalid directory path";
+				}
+
+				path.innerText = `${man.loc.join("/")} $`;
+			})
 		}
 
 		let man = new dll.hdd.manager();
