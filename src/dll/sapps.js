@@ -7,11 +7,17 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 
 		let man = new dll.hdd.manager();
 
-		{
-			let container = document.createElement("div");
-			container.classList.add("control", "f", "flex");
+		let wrapper = document.createElement("div");
+		let container = document.createElement("div");
 
-			let wrapper = document.createElement("div");
+		let history = document.createElement("div");
+
+		let inf = document.createElement("form");
+		let path = document.createElement("label");
+		let inp = document.createElement("input");
+
+		{
+			container.classList.add("control", "f", "flex");
 
 			wrapper.style.padding = "1em";
 			wrapper.style.flex = "1";
@@ -19,12 +25,6 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 			wrapper.style.color = "#ddd";
 			wrapper.style.fontFamily = "FiraMono";
 			wrapper.style.cursor = "text";
-
-			let history = document.createElement("div");
-
-			let inf = document.createElement("form");
-			let path = document.createElement("label");
-			let inp = document.createElement("input");
 
 			inf.classList.add("control", "flex", "fw");
 			inp.classList.add("control", "f1");
@@ -36,8 +36,15 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 			inp.style.fontFamily = "FiraMono";
 
 			path.style.fontFamily = "FiraMono";
+			path.style.cursor = "text";
 			path.innerHTML = "root/ $";
+		}
 
+		{
+			wrapper.onclick = () => inp.focus();
+		}
+
+		{
 			inf.appendChild(path);
 			inf.appendChild(inp);
 			
@@ -47,10 +54,13 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 			container.appendChild(wrapper);
 
 			w.content.appendChild(container);
-
-			wrapper.onclick = () => inp.focus();
 		}
 	},
-	Command: class { /* command handler commands */ },
+	Command: class {
+		constructor(callback = (args) => { }, description = "null") {
+			this.callback = callback;
+			this.description = description;
+		}
+	},
 	commands: {}
 }
