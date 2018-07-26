@@ -4,6 +4,21 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 		if (Object.keys(dll.cmd.commands).length == 0) {
 			dll.cmd.commands.echo = new dll.cmd.Command((args) => { return args.join(" "); });
 			dll.cmd.commands.clear = new dll.cmd.Command((args) => { history.innerHTML = "" });
+			dll.cmd.commands.cat = new dll.cmd.Command((args) => {
+				if (args[0] == undefined) return "cat: Enter a file name";
+
+				let path = args.join(" ");
+			
+				if (man.current[path] != undefined) {
+					if (man.current[path]["_type"] == "file") {
+						return man.current[path].content ? man.current[path].content : man.current[path];
+					} else {
+						return "cat: Path is not a file";
+					}
+				} else {
+					return "cat: Invalid file path"
+				}
+			});
 		}
 
 		let man = new dll.hdd.manager();
