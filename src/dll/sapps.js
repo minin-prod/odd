@@ -2,8 +2,24 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 	_type: "file",
 	init: (w) => {
 		if (Object.keys(dll.cmd.commands).length == 0) {
-			dll.cmd.commands.echo = new dll.cmd.Command((args) => { return args.join(" "); });
-			dll.cmd.commands.clear = new dll.cmd.Command((args) => { history.innerHTML = "" });
+			dll.cmd.commands.echo = new dll.cmd.Command((args) => { return args.join(" "); }, "Prints user specified text to output");
+			dll.cmd.commands.clear = new dll.cmd.Command((args) => { history.innerHTML = "" }, "Clears output");
+			dll.cmd.commands.ls = dll.cmd.commands.dir = new dll.cmd.Command((args) => {
+				let output = "";
+				let count = 0;
+			
+				Object.keys(man.current).forEach((item) => {
+					if (!item.startsWith("_")) {
+						let type = man.current[item]["_type"].toUpperCase();
+						output += `${type} ${item}</p><p>`;
+						count++;
+					}
+				});
+
+				output += `${count} items`;
+			
+				return output;
+			}, "List all files and folders in current directory");
 			dll.cmd.commands.cat = new dll.cmd.Command((args) => {
 				if (args[0] == undefined) return "cat: Enter a file name";
 
@@ -18,18 +34,19 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 				} else {
 					return "cat: Invalid file path"
 				}
-			});
+			}, "Read the contents of a file");
 			dll.cmd.commands.cd = new dll.cmd.Command((args) => {
 				if (args[0] == undefined) return "cd: Enter a directory";
 
-				if (Object.keys(man.current).includes(args[0]) || args[0] == "..") {
+				if (Object.keys(man.current).includes(args[0]) || args[0] == ".." || args[0] == "/") {
+					if (args[0] == "/") return man.cdlist(["root"]);
 					man.cd(args[0]);
 				} else {
 					return "cd: Invalid directory path";
 				}
 
 				path.innerText = `${man.loc.join("/")} $`;
-			})
+			}, "Change directory, use '..' to go up");
 		}
 
 		let man = new dll.hdd.manager();
@@ -84,9 +101,13 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 					inp.value = "";
 
 					if (Object.keys(dll.cmd.commands).includes(command)) {
-						output = dll.cmd.commands[command].Call("command", args);
-
-						if (output == undefined) output = "";
+						try {
+							output = dll.cmd.commands[command].Call("command", args);
+	
+							if (output == undefined) output = "";
+						} catch (e) {
+							output = `${command}: INTERNAL ERROR: ${e}`;
+						}
 					} else {
 						output = `Invalid command "${command}" specified.`;
 					}
