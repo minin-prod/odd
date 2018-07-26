@@ -30,6 +30,11 @@ body {
 	font-style: italic;
 }
 
+@font-face {
+	font-family: FiraMono;
+	src: url(./font/FiraMono-Regular.otf);
+}
+
 ::-webkit-scrollbar-track {
 	background: rgba(var(--accentRGBA), 0.2);
 }
