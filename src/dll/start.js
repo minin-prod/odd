@@ -52,21 +52,27 @@ dll.start.init = () => {
 	});
 
 	dll.start.menu.window.addEventListener("click", (e) => {
-		if (["Logout", "Restart", "Shutdown", "Sleep"].includes(e.target.innerText)) {
+		switch (e.target.innerText) {
+			case "Logout": break;
+			case "Restart": break;
+			case "Shutdown": break;
+			case "Sleep": break;
 
-		} else if (e.target.innerText == "File Manager") {
-			new dll.window.Window(2, ["root"]);
-		} else if (e.target.innerText == "Settings") {
-			new dll.window.Window(3);
-		} else if (e.target.innerText == "About") {
-			new dll.window.Window(5);
-		} else {
-			new dll.window.Window(2, ["root", "home", "libraries", e.target.innerText]);
+			case "File Manager": new dll.window.Window(2, ["root"]); break;
+			case "Settings": new dll.window.Window(3); break;
+			case "About": new dll.window.Window(5); break;
+
+			case "Productivity": new dll.window.Window(2, ["root", "home", "libraries", "Productivity"]); break;
+			case "Programming": new dll.window.Window(2, ["root", "home", "libraries", "Programming"]); break;
+			case "Tools": new dll.window.Window(2, ["root", "home", "libraries", "Tools"]); break;
+			case "Games": new dll.window.Window(2, ["root", "home", "libraries", "Games"]); break;
 		}
 	});
 
 	document.addEventListener("click", (e) => {
-		let targetClasses = e.target.attributes.class.nodeValue;
+		let targetClasses = e.target.attributes.class;
+
+		if (targetClasses) { targetClasses = targetClasses.nodeValue } else { return }
 
 		if (targetClasses != "start") {
 			dll.start.menu.window.classList.add("minimized");
