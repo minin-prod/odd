@@ -10,7 +10,7 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 		let wrapper = document.createElement("div");
 		let container = document.createElement("div");
 
-		let history = document.createElement("div");
+		let history = document.createElement("div"); history.innerHTML = "<br>";
 
 		let inf = document.createElement("form");
 		let path = document.createElement("label");
@@ -18,6 +18,8 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 
 		{
 			container.classList.add("control", "f", "flex");
+
+			history.classList.add("control", "cm0")
 
 			wrapper.style.padding = "1em";
 			wrapper.style.flex = "1";
@@ -42,6 +44,31 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 
 		{
 			wrapper.onclick = () => inp.focus();
+			inf.onsubmit = () => { return false };
+
+			inp.onkeydown = (e) => {
+				if (e.keyCode == 13) {
+					let args = inp.value.split(" ");
+					let command = args.shift().toLowerCase();
+					let output = "";
+
+					history.innerHTML += `<p>${path.innerText} ${inp.value}</p>`;
+
+					inp.value = "";
+
+					if (Object.keys(dll.cmd.commands).includes(command)) {
+						output = dll.cmd.commands[command].Call("command", args);
+
+						if (output == undefined) output = "";
+					} else {
+						output = `Invalid command "${command}" specified.`;
+					}
+
+					history.innerHTML += `<p>${output}</p><br>`;
+
+					w.content.scroll(0, history.clientHeight + inf.clientHeight + (16 * 2));
+				}
+			}
 		}
 
 		{
@@ -57,9 +84,22 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 		}
 	},
 	Command: class {
-		constructor(callback = (args) => { }, description = "null") {
-			this.callback = callback;
+		constructor(action = (args) => {}, description = "null") {
 			this.description = description;
+	
+			this.ev = {};
+			this.ev.command = action;
+		}
+	
+		Call(event, scope) {
+			switch (event) {
+				case "command":
+					return this.ev.command(scope);
+					break;
+	
+				default:
+					// error
+			}
 		}
 	},
 	commands: {}
