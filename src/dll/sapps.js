@@ -233,6 +233,7 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 				let item = document.createElement("div");
 				item.classList.add("control", "list-item");
 				item.innerText = app;
+				item.onmouseup = () => new dll.window.Window(0);
 
 				let split = document.createElement("div");
 				split.classList.add("control", "divider");
@@ -244,8 +245,18 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 			let item = document.createElement("div");
 			item.classList.add("control", "list-item");
 			item.innerText = "Custom Program";
+			item.onmouseup = () => new dll.window.Window(0);
 
 			apps.appendChild(item);
+		}
+
+		{
+			document.addEventListener("mouseup", contextup);
+
+			function contextup(e) {
+				document.removeEventListener("mouseup", contextup);
+				w.titlebar_buttons_close.onclick();
+			}
 		}
 	},
 	oapps: {
