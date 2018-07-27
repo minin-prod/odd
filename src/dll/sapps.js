@@ -170,12 +170,6 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 dll.hdd.fs.root.lib["openw.dll"] = {
 	_type: "file",
 	init: (w) => {
-		w.window.style.width = "42vw";
-		w.window.style.height = "56vh";
-
-		w.window.attributes.style.nodeValue += " top: calc(50vh - 28vh) !important;";
-		w.window.attributes.style.nodeValue += " left: calc(50vw - 21vw) !important;";
-
 		let container = document.createElement("div");
 		
 		let wrapper = document.createElement("div");
@@ -197,9 +191,13 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 		}
 
 		{
+			w.window.style.width = "42vw";
+			w.window.style.height = "56vh";
 			w.window.style.backdropFilter = "brightness(0.2) blur(0.5em)";
 			w.window.style.resize = "none";
 			w.window.style.boxShadow = "none";
+			w.window.attributes.style.nodeValue += " top: calc(50vh - 28vh) !important;";
+			w.window.attributes.style.nodeValue += " left: calc(50vw - 21vw) !important;";
 
 			w.titlebar.style.display = "none";
 
@@ -222,16 +220,36 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 			subtitle.innerText = "select an app to open this file;";
 
 			divider.classList.add("control", "divider");
+			divider.style.marginBottom = "0.8em";
+
+			apps.classList.add("control", "list", "light");
+			apps.style.width = "80%";
+			apps.style.overflowY = "auto";
+			apps.style.flex = "1";
 		}
 
 		{
 			Object.keys(dll.openw.oapps).forEach((app) => {
-				let item = document.createElement("h1");
+				let item = document.createElement("div");
+				item.classList.add("control", "list-item");
 				item.innerText = app;
 
+				let split = document.createElement("div");
+				split.classList.add("control", "divider");
+
 				apps.appendChild(item);
+				apps.appendChild(split);
 			});
+
+			let item = document.createElement("div");
+			item.classList.add("control", "list-item");
+			item.innerText = "Custom Program";
+
+			apps.appendChild(item);
 		}
 	},
-	oapps: {}
+	oapps: {
+		"Notepad": undefined,
+		"Photos": undefined
+	}
 }
