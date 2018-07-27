@@ -125,7 +125,9 @@ dll.explorer.init = (w) => {
 							case "exe": new dll.window.Window("-1", [], true, man.current[item].appdata); break;
 						
 							default:
-								new dll.window.Window(0);
+								man.loc.push(item);
+								new dll.window.Window(6, man.loc);
+								man.loc.pop();
 						}
 					} else if (man.current[item]["_type"] == "dir") {
 						man.cd(item);

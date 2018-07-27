@@ -165,3 +165,43 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 	},
 	commands: {}
 }
+
+dll.hdd.fs.root.lib["openw.dll"] = {
+	_type: "file",
+	init: (w) => {
+		w.window.style.width = "300px";
+		w.window.style.height = "400px";
+
+		let container = document.createElement("div");
+		
+		let wrapper = document.createElement("div");
+
+		let filename = document.createElement("h1");
+		let divider = document.createElement("div"); 
+		let apps = document.createElement("div");
+
+		{
+			container.classList.add("control", "f", "flex");
+
+			wrapper.style.flex = "1";
+			wrapper.style.display = "flex";
+			wrapper.style.flexDirection = "column";
+			wrapper.style.alignItems = "center";
+
+			filename.innerText = w.args[w.args.length - 1];
+
+			divider.classList.add("control", "divider");
+			divider.style.backgroundColor = "#000";
+		}
+
+		{
+			wrapper.appendChild(filename);
+			wrapper.appendChild(divider);
+			wrapper.appendChild(apps);
+
+			container.appendChild(wrapper);
+
+			w.content.appendChild(container);
+		}
+	}
+}

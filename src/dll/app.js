@@ -6,7 +6,8 @@ dll.app.apps = {
 	"2": "explorer",
 	"3": "settings",
 	"4": "contextmenu",
-	"5": "about"
+	"5": "about",
+	"6": "openwith"
 }
 
 dll.app.appdata = {
@@ -16,12 +17,12 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "NULL"
 		},
-		init: (w) => { },
+		init: undefined,
 		content: `NULL`
 	},
 	"startmenu": {
 		title: "",
-		init: (w) => { },
+		init: undefined,
 		content: ``
 	},
 	"explorer": {
@@ -44,7 +45,7 @@ dll.app.appdata = {
 	},
 	"contextmenu": {
 		title: "",
-		init: (w) => { },
+		init: undefined,
 		content: ``
 	},
 	"about": {
@@ -53,7 +54,16 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "About your ODD workspace"
 		},
-		init: (w) => { },
+		init: undefined,
 		content: `<center><a href="https://icons8.com">Icon pack by Icons8</a></center>`
+	},
+	"openwith": {
+		title: "Open With",
+		meta: {
+			author: "Minin Productions",
+			description: "Open With Dialog"
+		},
+		init: (w) => { dll.lib.get("openw.dll"); dll.openw.init(w) },
+		content: ``
 	}
 }
