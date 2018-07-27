@@ -82,6 +82,12 @@ dll.explorer.init = (w) => {
 
 							switch (filetype) {
 								case "exe": griditemIcon.classList.add("icon-exe"); break;
+								case "mp3": griditemIcon.classList.add("icon-music"); break;
+								case "mp4": griditemIcon.classList.add("icon-video"); break;
+								case "js": griditemIcon.classList.add("icon-code"); break;
+								case "css": griditemIcon.classList.add("icon-code"); break;
+								case "html": griditemIcon.classList.add("icon-code"); break;
+								case "txt": griditemIcon.classList.add("icon-txt"); break;
 							
 								default:
 									griditemIcon.classList.add("icon-file");

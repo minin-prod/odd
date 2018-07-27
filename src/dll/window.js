@@ -133,7 +133,7 @@ function windowDragEvent(e, w) {
 
 		let ny = w.offsetTop - pos2;
 		ny = ny >= 0 ? ny : 0;
-		ny = ny <= (window.innerHeight - 41) ? ny : window.innerHeight - 41;
+		ny = ny <= window.innerHeight - 41 ? ny : window.innerHeight - 41;
 
 		// Move to New Mouse Position
 		w.style.top = ny + "px";
