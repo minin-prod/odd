@@ -4,6 +4,15 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 		if (Object.keys(dll.cmd.commands).length == 0) {
 			dll.cmd.commands.echo = new dll.cmd.Command((args) => { return args.join(" "); }, "Prints user specified text to output");
 			dll.cmd.commands.clear = new dll.cmd.Command((args) => { history.innerHTML = "" }, "Clears output");
+			dll.cmd.commands.help = new dll.cmd.Command((args) => {
+				let output = "";
+			
+				Object.keys(dll.cmd.commands).forEach((command) => {
+					output += `${command}: ${dll.cmd.commands[command].description}</p><p>`;
+				});
+			
+				return output;
+			}, "List commands or display help for a command");
 			dll.cmd.commands.ls = dll.cmd.commands.dir = new dll.cmd.Command((args) => {
 				let output = "";
 				let count = 0;
