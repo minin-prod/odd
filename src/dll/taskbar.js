@@ -44,10 +44,10 @@ dll.taskbar.init = () => {
 		});
 
 		dll.taskbar.timeService = setInterval(() => {
-			let t = new Date();
+			utilSETTIME(dt);
+		}, 10000);
 
-			dt.innerText = `${t.getHours()}:${t.getMinutes()}\n${t.getMonth()+1}/${t.getDate()}/${t.getFullYear()}`;
-		}, 1000);
+		utilSETTIME(dt);
 	}
 
 	{
@@ -56,6 +56,24 @@ dll.taskbar.init = () => {
 
 		sectionMid.appendChild(dll.taskbar.windowview);
 	}
+}
+
+function utilSETTIME(clock) {
+	let t = new Date();
+
+	let h = t.getHours();
+	let m = t.getMinutes();
+
+	h = h.toString().length == 1 ? `0${h}` : h;
+	m = m.toString().length == 1 ? `0${m}` : m;
+
+	let month = t.getMonth() + 1;
+	let day = t.getDate();
+
+	month = month.toString().length == 1 ? `0${month}` : month;
+	day = day.toString().length == 1 ? `0${day}` : day;
+
+	clock.innerText = `${h}:${m}\n${month}/${day}/${t.getFullYear()}`;
 }
 
 function utilGETWINTB(win) {
