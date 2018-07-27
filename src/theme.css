@@ -221,7 +221,7 @@ body {
 
 .fglass {
 	background: url("./img/frostedglass.png") !important;
-	backdrop-filter: brightness(0.2) blur(5em);
+	backdrop-filter: brightness(0.2) blur(4em);
 	box-shadow: none !important;
 }
 
@@ -397,7 +397,6 @@ body {
 	width: 100vw;
 	height: 40px;
 	display: flex;
-	background: rgba(var(--accentRGBA), 0.5);
 }
 
 .nav nav * {
