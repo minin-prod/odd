@@ -217,6 +217,14 @@ body {
 
 .icon-up { background: url("./img/up.png"); }
 
+/* misc fx */
+
+.fglass {
+	background: url("./img/frostedglass.png") !important;
+	backdrop-filter: brightness(0.2) blur(5em);
+	box-shadow: none !important;
+}
+
 /* windows */
 
 .window.minimized {

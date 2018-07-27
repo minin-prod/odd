@@ -191,11 +191,10 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 		}
 
 		{
+			w.window.classList.add("fglass");
 			w.window.style.width = "42vw";
 			w.window.style.height = "56vh";
-			w.window.style.backdropFilter = "brightness(0.2) blur(0.5em)";
 			w.window.style.resize = "none";
-			w.window.style.boxShadow = "none";
 			w.window.attributes.style.nodeValue += " top: calc(50vh - 28vh) !important;";
 			w.window.attributes.style.nodeValue += " left: calc(50vw - 21vw) !important;";
 
@@ -203,8 +202,7 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 
 			w.content.style.height = "100%";
 			w.content.style.color = "var(--textColor)";
-			w.content.style.background =
-			w.window.style.background = "transparent";
+			w.content.style.background = "transparent";
 
 			container.classList.add("control", "f", "flex");
 
