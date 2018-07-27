@@ -78,12 +78,15 @@ dll.explorer.init = (w) => {
 						griditemIcon.classList.add(dll.explorer.settings_icons[item]);
 					} else {
 						if (man.current[item]["_type"] == "file") {
-							let filetype = item.split(".")[item.split(".").length - 1];
+							let filetype = man.current[item]["_icon"] ? man.current[item]["_icon"] : item.split(".")[item.split(".").length - 1];
 
 							switch (filetype) {
 								case "exe": griditemIcon.classList.add("icon-exe"); break;
-								case "mp3": griditemIcon.classList.add("icon-music"); break;
+								case "mp3": griditemIcon.classList.add("icon-audio"); break;
 								case "mp4": griditemIcon.classList.add("icon-video"); break;
+								case "png": griditemIcon.classList.add("icon-image"); break;
+								case "jpg": griditemIcon.classList.add("icon-image"); break;
+								case "jpeg": griditemIcon.classList.add("icon-image"); break;
 								case "js": griditemIcon.classList.add("icon-code"); break;
 								case "css": griditemIcon.classList.add("icon-code"); break;
 								case "html": griditemIcon.classList.add("icon-code"); break;
