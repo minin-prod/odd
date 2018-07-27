@@ -361,8 +361,6 @@ body {
 	top: 0 !important;
 	left: 0 !important;
 	resize: none;
-	background: transparent;
-	box-shadow: none;
 }
 
 .window.start .window-title {
@@ -373,7 +371,7 @@ body {
 	width: initial;
 	height: 100%;
 	padding: 1.25em 1em;
-	background: rgba(var(--accentRGBA), 0.5);
+	background: transparent;
 	color: var(--textColor);
 }
 

@@ -44,7 +44,7 @@ dll.start.init = () => {
 	let button = document.getElementsByTagName("nav")[0].getElementsByClassName("start")[0];
 	
 	dll.start.menu = new dll.start.startMenu();
-	dll.start.menu.window.classList.add("minimized");
+	dll.start.menu.window.classList.add("minimized", "fglass");
 
 	button.addEventListener("click", (e) => {
 		dll.start.menu.window.classList.toggle("minimized");
