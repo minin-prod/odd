@@ -76,7 +76,8 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 
 			wrapper.style.padding = "1em";
 			wrapper.style.flex = "1";
-			wrapper.style.backgroundColor = w.window.style.backgroundColor = "#111";
+			wrapper.style.backgroundColor =
+			w.window.style.backgroundColor = "#111";
 			wrapper.style.color = "#ddd";
 			wrapper.style.fontFamily = "FiraMono";
 			wrapper.style.cursor = "text";
@@ -169,33 +170,24 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 dll.hdd.fs.root.lib["openw.dll"] = {
 	_type: "file",
 	init: (w) => {
-		w.window.style.width = "300px";
-		w.window.style.height = "400px";
+		w.window.style.width = "42vw";
+		w.window.style.height = "56vh";
+
+		w.window.attributes.style.nodeValue += " top: calc(50vh - 28vh) !important;";
+		w.window.attributes.style.nodeValue += " left: calc(50vw - 21vw) !important;";
 
 		let container = document.createElement("div");
 		
 		let wrapper = document.createElement("div");
 
 		let filename = document.createElement("h1");
+		let subtitle = document.createElement("p");
 		let divider = document.createElement("div"); 
 		let apps = document.createElement("div");
 
 		{
-			container.classList.add("control", "f", "flex");
-
-			wrapper.style.flex = "1";
-			wrapper.style.display = "flex";
-			wrapper.style.flexDirection = "column";
-			wrapper.style.alignItems = "center";
-
-			filename.innerText = w.args[w.args.length - 1];
-
-			divider.classList.add("control", "divider");
-			divider.style.backgroundColor = "#000";
-		}
-
-		{
 			wrapper.appendChild(filename);
+			wrapper.appendChild(subtitle);
 			wrapper.appendChild(divider);
 			wrapper.appendChild(apps);
 
@@ -203,5 +195,43 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 
 			w.content.appendChild(container);
 		}
-	}
+
+		{
+			w.window.style.backdropFilter = "brightness(0.2) blur(0.5em)";
+			w.window.style.resize = "none";
+			w.window.style.boxShadow = "none";
+
+			w.titlebar.style.display = "none";
+
+			w.content.style.height = "100%";
+			w.content.style.color = "var(--textColor)";
+			w.content.style.background =
+			w.window.style.background = "transparent";
+
+			container.classList.add("control", "f", "flex");
+
+			wrapper.style.padding = "1em";
+			wrapper.style.flex = "1";
+			wrapper.style.display = "flex";
+			wrapper.style.flexDirection = "column";
+			wrapper.style.alignItems = "center";
+
+			filename.style.marginBottom = "0";
+
+			filename.innerText = w.args[w.args.length - 1];
+			subtitle.innerText = "select an app to open this file;";
+
+			divider.classList.add("control", "divider");
+		}
+
+		{
+			Object.keys(dll.openw.oapps).forEach((app) => {
+				let item = document.createElement("h1");
+				item.innerText = app;
+
+				apps.appendChild(item);
+			});
+		}
+	},
+	oapps: {}
 }
