@@ -129,6 +129,7 @@ dll.explorer.init = (w) => {
 
 						switch (filetype) {
 							case "exe": new dll.window.Window("-1", [], true, man.current[item].appdata); break;
+							case "txt": man.loc.push(item); new dll.window.Window("-1", man.loc, true, dll.hdd.fs.root.bin["notepad.exe"].appdata); man.loc.pop(); break;
 						
 							default:
 								man.loc.push(item);

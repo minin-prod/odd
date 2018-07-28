@@ -231,7 +231,7 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 				let item = document.createElement("div");
 				item.classList.add("control", "list-item");
 				item.innerText = app;
-				item.onmouseup = () => dll.openw.oapps[apps]();
+				item.onmouseup = () => { dll.openw.oapps[app](w.args); };
 
 				let split = document.createElement("div");
 				split.classList.add("control", "divider");
@@ -302,11 +302,21 @@ dll.hdd.fs.root.lib["npad.dll"] = {
 		}
 
 		{
+			if (w.args.length > 0) {
+				let man = new dll.hdd.manager();
+				let t = w.args.pop();
+				man.cdlist(w.args);
+				w.args.push(t);
+				textbox.value = man.current[t].content;
+			}
+
 			Object.keys(options).forEach((item) => {
 				let b = document.createElement("div");
 				b.classList.add("control", "hlist-item");
 
 				b.innerText = item;
+
+				b.onclick = () => options[item]();
 
 				navbar.appendChild(b);
 			});
