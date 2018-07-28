@@ -214,6 +214,9 @@ body {
 .icon-txt { -webkit-mask: url("./img/explorer/txt.png") center / contain no-repeat; mask: url("./img/explorer/txt.png") center / contain no-repeat; background: var(--accent); }
 
 .icon-clock { -webkit-mask: url("./img/settings/time.svg") center / contain no-repeat; mask: url("./img/settings/time.svg") center / contain no-repeat; background: var(--accent); }
+.icon-computer { -webkit-mask: url("./img/settings/monitor.png") center / contain no-repeat; mask: url("./img/settings/monitor.png") center / contain no-repeat; background: var(--accent); }
+.icon-paint { -webkit-mask: url("./img/settings/paint.png") center / contain no-repeat; mask: url("./img/settings/paint.png") center / contain no-repeat; background: var(--accent); }
+.icon-wheelchair { -webkit-mask: url("./img/settings/wheelchair.png") center / contain no-repeat; mask: url("./img/settings/wheelchair.png") center / contain no-repeat; background: var(--accent); }
 
 .icon-up { background: url("./img/up.png"); }
 

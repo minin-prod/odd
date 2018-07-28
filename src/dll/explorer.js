@@ -11,7 +11,7 @@ dll.explorer.settings_icons = {
 	"time": "icon-clock",
 	"appearance": "icon-paint",
 	"accessability": "icon-wheelchair",
-	"system": "icon-monitor"
+	"system": "icon-computer"
 }
 
 dll.explorer.init = (w) => {
