@@ -333,8 +333,6 @@ body {
 	height: initial;
 	max-height: 60vh;
 	resize: none;
-	background: transparent;
-	box-shadow: none;
 }
 
 .app-4 .window-title {
@@ -345,7 +343,7 @@ body {
 	width: initial;
 	height: 100%;
 	padding: 0.5em;
-	background: rgba(var(--accentRGBA), 0.5);
+	background: transparent;
 	color: var(--textColor);
 }
 

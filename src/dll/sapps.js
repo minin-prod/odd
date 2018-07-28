@@ -289,6 +289,7 @@ dll.hdd.fs.root.lib["npad.dll"] = {
 			textbox.style.border = "none";
 			textbox.style.outline = "none";
 			textbox.style.backgroundColor = "transparent";
+			textbox.style.fontFamily = "FiraMono";
 		}
 
 		{

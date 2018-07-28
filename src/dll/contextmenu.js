@@ -9,6 +9,8 @@ dll.contextmenu.Menu = class extends dll.window.Window {
 		this.window.style.top = `${(origin.clientY - 40) + offset.y}px`;
 		this.window.style.left = `${origin.clientX + offset.x}px`;
 
+		this.window.classList.add("fglass");
+
 		this.MoveToFront();
 
 		this.optionsContainer = document.createElement("div");
