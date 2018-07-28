@@ -60,7 +60,7 @@ body {
 
 .control.f1 { flex: 1; }
 
-.control.m0, .control.cm0 * { margin: 0; }
+.control.m0, .control.cm0 * { margin: 0 !important; }
 
 .control.list > *:not(.divider) {
 	padding: 0.2em 0.5em;
@@ -225,6 +225,12 @@ body {
 .fglass {
 	background: url("./img/frostedglass.png") !important;
 	backdrop-filter: brightness(0.2) blur(4em);
+	box-shadow: none !important;
+}
+
+.fakefglass {
+	background: url("./img/frostedglass.png") !important;
+	backdrop-filter: brightness(0.2);
 	box-shadow: none !important;
 }
 

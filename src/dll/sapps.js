@@ -231,7 +231,7 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 				let item = document.createElement("div");
 				item.classList.add("control", "list-item");
 				item.innerText = app;
-				item.onmouseup = () => new dll.window.Window(0);
+				item.onmouseup = () => dll.openw.oapps[apps]();
 
 				let split = document.createElement("div");
 				split.classList.add("control", "divider");
@@ -258,7 +258,59 @@ dll.hdd.fs.root.lib["openw.dll"] = {
 		}
 	},
 	oapps: {
-		"Notepad": undefined,
+		"Notepad": (path) => new dll.window.Window(-1, path, true, dll.hdd.fs.root.bin["notepad.exe"].appdata),
 		"Photos": undefined
+	}
+}
+
+dll.hdd.fs.root.lib["npad.dll"] = {
+	_type: "file",
+	init: (w) => {
+		let splitter = document.createElement("div");
+		let navbar = document.createElement("div");
+		let container = document.createElement("div");
+		let textbox = document.createElement("textarea");
+
+		let options = {
+			"File": undefined,
+			"Edit": undefined,
+			"Help": undefined
+		}
+
+		{
+			splitter.classList.add("control", "splitter", "splitter-navbar");
+
+			navbar.classList.add("control", "panel", "nav", "cm0", "hlist", "light");
+
+			container.classList.add("control", "flex");
+
+			textbox.classList.add("control", "f1");
+			textbox.style.resize = "none";
+			textbox.style.border = "none";
+			textbox.style.outline = "none";
+			textbox.style.backgroundColor = "transparent";
+		}
+
+		{
+			splitter.appendChild(navbar);
+			splitter.appendChild(container);
+
+			container.appendChild(textbox);
+
+			w.content.appendChild(splitter)
+		}
+
+		{
+			Object.keys(options).forEach((item) => {
+				let b = document.createElement("div");
+				b.classList.add("control", "hlist-item");
+
+				b.innerText = item;
+
+				navbar.appendChild(b);
+			});
+
+			textbox.focus();
+		}
 	}
 }

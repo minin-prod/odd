@@ -5,7 +5,7 @@ new Promise((result, reject) => {
 	let layerNav = document.createElement("div"); layerNav.classList.add("layer", "nav"); container.appendChild(layerNav);
 
 	{
-		let navbar = document.createElement("nav"); navbar.classList.add("fglass");
+		let navbar = document.createElement("nav"); navbar.classList.add("fakefglass");
 		let left = document.createElement("div"); left.classList.add("section", "left");
 		let mid = document.createElement("div"); mid.classList.add("section", "mid");
 		let right = document.createElement("div"); right.classList.add("section", "right");

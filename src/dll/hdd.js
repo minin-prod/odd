@@ -23,6 +23,19 @@ dll.hdd.fs = {
 					init: (w) => { dll.lib.get("cmd.dll"); dll.cmd.init(w) },
 					content: ``
 				}
+			},
+			"notepad.exe": {
+				_type: "file",
+				_pseudoname: "Productivity",
+				appdata: {
+					title: "Notepad",
+					meta: {
+						author: "Minin Productions",
+						description: "Notepad Utility"
+					},
+					init: (w) => { dll.lib.get("npad.dll"); dll.npad.init(w) },
+					content: ``
+				}
 			}
 		},
 		"lib": {
