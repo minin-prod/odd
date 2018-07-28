@@ -62,6 +62,15 @@ dll.hdd.fs = {
 		_type: "dir",
 		"time": {
 			_type: "dir"
+		},
+		"appearance": {
+			_type: "dir"
+		},
+		"accessability": {
+			_type: "dir"
+		},
+		"system": {
+			_type: "dir"
 		}
 	}
 }

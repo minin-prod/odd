@@ -1,11 +1,17 @@
 dll.explorer = {};
 
 dll.explorer.settings_names = {
-	"time": "Date and Time"
+	"time": "Date and Time",
+	"appearance": "Personalize",
+	"accessability": "Ease of Access",
+	"system": "My Computer"
 }
 
 dll.explorer.settings_icons = {
-	"time": "icon-clock"
+	"time": "icon-clock",
+	"appearance": "icon-paint",
+	"accessability": "icon-wheelchair",
+	"system": "icon-monitor"
 }
 
 dll.explorer.init = (w) => {
