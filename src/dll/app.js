@@ -23,6 +23,7 @@ dll.app.appdata = {
 	"startmenu": {
 		title: "",
 		init: undefined,
+		shortcuts: false,
 		init: (w) => { w.shortcuts = false; },
 		content: ``
 	},
@@ -47,6 +48,7 @@ dll.app.appdata = {
 	"contextmenu": {
 		title: "",
 		init: undefined,
+		shortcuts: false,
 		content: ``
 	},
 	"about": {
@@ -64,6 +66,7 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "Open With Dialog"
 		},
+		shortcuts: false,
 		init: (w) => { dll.lib.get("openw.dll"); dll.openw.init(w) },
 		content: ``
 	}

@@ -10,7 +10,6 @@ dll.window.Window = class {
 		this.args = args;
 		this.appid = appid;
 		this.appdata = appdat ? appdat : appdata[apps[this.appid]];
-		this.shortcuts = true;
 
 		// Create Base Element
 		this.window = document.createElement("div");
@@ -79,6 +78,7 @@ dll.window.Window = class {
 		}
 
 		// Create Shortcuts
+		this.window.setAttribute("odd-hasShorts", this.appdata.shortcuts != undefined ? this.appdata.shortcuts : true);
 		this.shorts = {
 			"up": this.titlebar_buttons_max.onclick,
 			"down": this.titlebar_buttons_min.onclick
@@ -87,7 +87,7 @@ dll.window.Window = class {
 		// Initialize App
 		body.appendChild(this.window);
 		if (init) this.appdata.init(this);
-		if (this.shortcuts) dll.keys.attach(this.window, this.shorts)
+		if (this.window.getAttribute("odd-hasShorts") == "true") dll.keys.attach(this.window, this.shorts);
 		dll.taskbar.update();
 	}
 

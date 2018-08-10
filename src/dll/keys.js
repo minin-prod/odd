@@ -4,7 +4,9 @@ dll.keys.registered = [];
 
 dll.keys.init = () => {
 	document.addEventListener("keydown", (e) => {
-		// check through events
+		dll.keys.registered.forEach((group) => {
+			
+		});
 	});
 }
 
