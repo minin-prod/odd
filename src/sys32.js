@@ -79,6 +79,7 @@ new Promise((result, reject) => {
 
 	result(container);
 }).then((res, err) => {
+	dll.keys.init();
 	dll.appearance.init();
 	dll.taskbar.init();
 	dll.start.init();

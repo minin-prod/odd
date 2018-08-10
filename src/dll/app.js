@@ -23,6 +23,7 @@ dll.app.appdata = {
 	"startmenu": {
 		title: "",
 		init: undefined,
+		init: (w) => { w.shortcuts = false; },
 		content: ``
 	},
 	"explorer": {

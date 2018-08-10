@@ -10,6 +10,7 @@ dll.window.Window = class {
 		this.args = args;
 		this.appid = appid;
 		this.appdata = appdat ? appdat : appdata[apps[this.appid]];
+		this.shortcuts = true;
 
 		// Create Base Element
 		this.window = document.createElement("div");
@@ -77,9 +78,16 @@ dll.window.Window = class {
 			"Close": this.titlebar_buttons_close.onclick
 		}
 
+		// Create Shortcuts
+		this.shorts = {
+			"ctrl+up": this.titlebar_buttons_max.onclick,
+			"ctrl+down": this.titlebar_buttons_min.onclick
+		}
+
 		// Initialize App
 		body.appendChild(this.window);
 		if (init) this.appdata.init(this);
+		if (this.shortcuts) dll.keys.init(this, this.shorts)
 		dll.taskbar.update();
 	}
 
