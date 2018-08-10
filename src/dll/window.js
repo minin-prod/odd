@@ -80,14 +80,14 @@ dll.window.Window = class {
 
 		// Create Shortcuts
 		this.shorts = {
-			"ctrl+up": this.titlebar_buttons_max.onclick,
-			"ctrl+down": this.titlebar_buttons_min.onclick
+			"up": this.titlebar_buttons_max.onclick,
+			"down": this.titlebar_buttons_min.onclick
 		}
 
 		// Initialize App
 		body.appendChild(this.window);
 		if (init) this.appdata.init(this);
-		if (this.shortcuts) dll.keys.init(this, this.shorts)
+		if (this.shortcuts) dll.keys.attach(this.window, this.shorts)
 		dll.taskbar.update();
 	}
 
