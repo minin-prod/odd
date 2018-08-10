@@ -5,6 +5,8 @@ dll.keys.registered = [];
 dll.keys.init = () => {
 	document.addEventListener("keydown", (e) => {
 		dll.keys.registered.forEach((group) => {
+			if (!group.global && !group.location.classList.contains("focus")) return;
+
 			Object.keys(group.shortcuts).forEach((shortcut) => {
 				switch (shortcut[0]) {
 					case "~": {
@@ -21,7 +23,6 @@ dll.keys.init = () => {
 }
 
 /**
- * 
  * @param {Element} location
  * @param {object} shortcuts
  * @param {Boolean} global

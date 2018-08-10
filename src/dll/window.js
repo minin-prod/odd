@@ -80,8 +80,8 @@ dll.window.Window = class {
 		// Create Shortcuts
 		this.window.setAttribute("odd-hasShorts", this.appdata.shortcuts != undefined ? this.appdata.shortcuts : true);
 		this.shorts = {
-			"~ArrowUp": () => { if (!this.window.classList.contains("minimized")) { this.titlebar_buttons_max.onclick() } else { this.titlebar_buttons_min.onclick() } },
-			"~ArrowDown": () => { if (!this.window.classList.contains("maximized")) { this.titlebar_buttons_min.onclick() } else { this.titlebar_buttons_max.onclick() } }
+			"~ArrowUp": () => { if (this.window.classList.contains("minimized")) { this.window.classList.remove("minimized") } else { this.window.classList.add("maximized") } },
+			"~ArrowDown": () => { if (this.window.classList.contains("maximized")) { this.window.classList.remove("maximized") } else { this.window.classList.add("minimized") } }
 		}
 
 		// Initialize App
