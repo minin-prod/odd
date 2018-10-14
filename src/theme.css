@@ -224,13 +224,14 @@ body {
 
 .fglass {
 	background: url("./img/frostedglass.png") !important;
-	backdrop-filter: brightness(0.2) blur(4em);
+	background-color: rgba(0, 0, 0, 0.8) !important;
+	backdrop-filter: blur(4em);
 	box-shadow: none !important;
 }
 
 .fakefglass {
 	background: url("./img/frostedglass.png") !important;
-	backdrop-filter: brightness(0.2);
+	background-color: rgba(0, 0, 0, 0.8) !important;
 	box-shadow: none !important;
 }
 
