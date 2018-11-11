@@ -11,6 +11,9 @@ body {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	user-select: none;
+
+	scrollbar-color: var(--accent) rgba(var(--accentRGBA), 0.2) !important;
+	scrollbar-width: thin !important;
 }
 
 @font-face {
@@ -34,6 +37,7 @@ body {
 	font-family: FiraMono;
 	src: url(./font/FiraMono-Regular.otf);
 }
+/* scrollbar */
 
 ::-webkit-scrollbar-track {
 	background: rgba(var(--accentRGBA), 0.2);
@@ -61,6 +65,12 @@ body {
 .control.f1 { flex: 1; }
 
 .control.m0, .control.cm0 * { margin: 0 !important; }
+
+.control.input, .control.input * {
+	-moz-user-select: text;
+	-webkit-user-select: text;
+	user-select: text;
+}
 
 .control.list > *:not(.divider) {
 	padding: 0.2em 0.5em;

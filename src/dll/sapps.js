@@ -72,7 +72,7 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 		{
 			container.classList.add("control", "f", "flex");
 
-			history.classList.add("control", "cm0")
+			history.classList.add("control", "cm0", "input")
 
 			wrapper.style.padding = "1em";
 			wrapper.style.flex = "1";
@@ -82,7 +82,7 @@ dll.hdd.fs.root.lib["cmd.dll"] = {
 			wrapper.style.fontFamily = "FiraMono";
 			wrapper.style.cursor = "text";
 
-			inf.classList.add("control", "flex", "fw");
+			inf.classList.add("control", "flex", "fw", "input");
 			inp.classList.add("control", "f1");
 
 			inp.style.marginLeft = "0.5em";
@@ -270,6 +270,8 @@ dll.hdd.fs.root.lib["npad.dll"] = {
 		let navbar = document.createElement("div");
 		let container = document.createElement("div");
 		let textbox = document.createElement("textarea");
+
+		textbox.classList.add("control", "input")
 
 		let options = {
 			"File": undefined,

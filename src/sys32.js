@@ -52,13 +52,13 @@ new Promise((result, reject) => {
 				let classes = e.target.attributes.class.nodeValue;
 
 				switch (classes) {
-					case "time":
+					case "time": {
 						dll.contextmenu.spawn(e, timemenu, { x: 0, y: 20 });
-						break;
+					} break;
 
-					case "start": break;
+					case "start": {} break;
 
-					default:
+					default: {
 						if (classes.endsWith(" control hlist-item")) {
 							dll.contextmenu.spawn(e, utilGETWINMENU(layerApp.getElementsByClassName("window")[parseInt(classes.split(" ")[0])]), { x: 0, y: 20 });
 
@@ -72,6 +72,7 @@ new Promise((result, reject) => {
 						}
 
 						dll.contextmenu.spawn(e, desktopmenu);
+					}
 				}
 			}
 		}
