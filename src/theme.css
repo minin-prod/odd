@@ -7,6 +7,11 @@ body {
 	font-size: 0.9em;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
 * {
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -59,17 +64,40 @@ body {
 }
 
 .control.flex { display: flex; }
+.control.v { flex-direction: column; }
 .control.fw, .control.f { width: 100%; }
 .control.fh, .control.f { height: 100%; }
 
+.control.bc { justify-content: center; align-items: flex-end; }
+.control.tr { justify-content: flex-start; align-items: flex-end; }
+.control.tl { justify-content: flex-start; align-items: flex-start; }
+
 .control.f1 { flex: 1; }
+.control.f125 { flex: 1.25; }
 
 .control.m0, .control.cm0 * { margin: 0 !important; }
+
+.control.w1 { width: 1em; }
+.control.w06 { width: 0.6em; }
 
 .control.input, .control.input * {
 	-moz-user-select: text;
 	-webkit-user-select: text;
 	user-select: text;
+}
+
+.control.link {
+	color: var(--linkColor);
+	text-decoration: none;
+	background-image: linear-gradient(to right, var(--linkColor) 50%, var(--linkColor) 50%);
+	background-repeat: no-repeat;
+	background-position: 0 1.03em;
+	background-size: 100% 0.1em;
+	transition: background-size 0.2s;
+}
+
+.control.link:hover {
+	background-size: 100% 0.3em;
 }
 
 .control.list > *:not(.divider) {
@@ -229,6 +257,15 @@ body {
 .icon-wheelchair { -webkit-mask: url("./img/settings/wheelchair.png") center / contain no-repeat; mask: url("./img/settings/wheelchair.png") center / contain no-repeat; background: var(--accent); }
 
 .icon-up { background: url("./img/up.png"); }
+
+/* util */
+
+.logo {
+	width: 6em;
+	height: 6em;
+	background: url("./img/logo/white - transparent.png") center / cover;
+	display: block;
+}
 
 /* misc fx */
 

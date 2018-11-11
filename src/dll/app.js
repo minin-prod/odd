@@ -17,12 +17,11 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "NULL"
 		},
-		init: undefined,
+		init: () => { /* initialize */ },
 		content: `NULL`
 	},
 	"startmenu": {
 		title: "",
-		init: undefined,
 		shortcuts: false,
 		init: (w) => { w.shortcuts = false; },
 		content: ``
@@ -47,7 +46,7 @@ dll.app.appdata = {
 	},
 	"contextmenu": {
 		title: "",
-		init: undefined,
+		init: () => { /* initialize */ },
 		shortcuts: false,
 		content: ``
 	},
@@ -57,14 +56,31 @@ dll.app.appdata = {
 			author: "Minin Productions",
 			description: "About your ODD workspace"
 		},
-		init: undefined,
-		content: `<center><a href="https://icons8.com">Icon pack by Icons8</a></center>`
+		init: () => { /* initialize */ },
+		content: `<div class="control flex f v">
+			<div class="control flex f125 bc">
+				<div class="logo"></div>
+			</div>
+			<div class="control flex f1">
+				<div class="control flex f1 v tr">
+					<p>Code</p>
+					<p>Icons</p>
+					<p>Inspiration</p>
+				</div>
+				<div class="control w06"></div>
+				<div class="control flex f1 v tl">
+					<a class="control link" target="_blank" href="https://github.com/mininp">Minin Productions</a>
+					<a class="control link" target="_blank" href="https://icons8.com/">Icons8</a>
+					<a class="control link" target="_blank" href="https://www.os-js.org/">os.js</a>
+				</div>
+			</div>
+		</div>`
 	},
 	"openwith": {
 		title: "Open With",
 		meta: {
 			author: "Minin Productions",
-			description: "Open With Dialog"
+			description: "'Open With' Dialog"
 		},
 		shortcuts: false,
 		init: (w) => { dll.lib.get("openw.dll"); dll.openw.init(w) },

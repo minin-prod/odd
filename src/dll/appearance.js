@@ -4,7 +4,8 @@ dll.appearance.settings = {
 	"wallpaper": "#1c1c1c",
 	"accentRGBA": "0, 0, 0",
 	"accent": "#222226",
-	"textColor": "#ddd"
+	"textColor": "#ddd",
+	"linkColor": "#222226"
 }
 
 dll.appearance.init = () => {
