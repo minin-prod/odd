@@ -13,7 +13,7 @@ dll.appearance.init = () => {
 
 	let head = document.getElementsByTagName("head")[0];
 
-	{
+	{ // settings
 		let _settings = ":root {\n";
 		Object.keys(settings).forEach((set) => {
 			_settings += `\t--${set}: ${settings[set]};\n`
@@ -23,5 +23,23 @@ dll.appearance.init = () => {
 		let _style = document.createElement("style");
 		_style.innerHTML = _settings;
 		head.appendChild(_style);
+	}
+
+	{ // tnn files
+		let anchor = document.getElementById("tnn-anchor");
+
+		let tnns = [
+			"system",
+			"controls",
+			"img"
+		]
+
+		tnns.forEach((tnn) => {
+			let link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.href = `./src/tnn/${tnn}.css`;
+
+			document.head.insertBefore(link, anchor);
+		});
 	}
 }

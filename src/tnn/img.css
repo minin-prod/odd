@@ -1,0 +1,31 @@
+.icon-folder, .icon-up {
+	background-position: center !important;
+	background-size: cover !important;
+}
+
+.icon-folder { -webkit-mask: url("../img/explorer/folder.svg") center / contain no-repeat; mask: url("../img/explorer/folder.svg") center / contain no-repeat; background: var(--accent); }
+
+.icon-file { -webkit-mask: url("../img/explorer/file.svg") center / contain no-repeat; mask: url("../img/explorer/file.svg") center / contain no-repeat; background: var(--accent); }
+
+.icon-exe { -webkit-mask: url("../img/explorer/exe.png") center / contain no-repeat; mask: url("../img/explorer/exe.png") center / contain no-repeat; background: var(--accent); }
+.icon-audio { -webkit-mask: url("../img/explorer/audio.png") center / contain no-repeat; mask: url("../img/explorer/audio.png") center / contain no-repeat; background: var(--accent); }
+.icon-video { -webkit-mask: url("../img/explorer/video.png") center / contain no-repeat; mask: url("../img/explorer/video.png") center / contain no-repeat; background: var(--accent); }
+.icon-image { -webkit-mask: url("../img/explorer/image.png") center / contain no-repeat; mask: url("../img/explorer/image.png") center / contain no-repeat; background: var(--accent); }
+.icon-code { -webkit-mask: url("../img/explorer/code.png") center / contain no-repeat; mask: url("../img/explorer/code.png") center / contain no-repeat; background: var(--accent); }
+.icon-txt { -webkit-mask: url("../img/explorer/txt.png") center / contain no-repeat; mask: url("../img/explorer/txt.png") center / contain no-repeat; background: var(--accent); }
+
+.icon-clock { -webkit-mask: url("../img/settings/time.svg") center / contain no-repeat; mask: url("../img/settings/time.svg") center / contain no-repeat; background: var(--accent); }
+.icon-computer { -webkit-mask: url("../img/settings/monitor.png") center / contain no-repeat; mask: url("../img/settings/monitor.png") center / contain no-repeat; background: var(--accent); }
+.icon-paint { -webkit-mask: url("../img/settings/paint.png") center / contain no-repeat; mask: url("../img/settings/paint.png") center / contain no-repeat; background: var(--accent); }
+.icon-wheelchair { -webkit-mask: url("../img/settings/wheelchair.png") center / contain no-repeat; mask: url("../img/settings/wheelchair.png") center / contain no-repeat; background: var(--accent); }
+
+.icon-up { background: url("../img/up.png"); }
+
+/* other */
+
+.logo {
+	width: 6em;
+	height: 6em;
+	background: url("../img/logo/white - transparent.png") center / cover;
+	display: block;
+}

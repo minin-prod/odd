@@ -79,11 +79,11 @@ new Promise((result, reject) => {
 	}
 
 	result(container);
-}).then((res, err) => {
-	dll.keys.init();
-	dll.appearance.init();
-	dll.taskbar.init();
-	dll.start.init();
+}).then(async (res, err) => {
+	await dll.keys.init();
+	await dll.appearance.init();
+	await dll.taskbar.init();
+	await dll.start.init();
 }).then((res, err) => {
 	document.getElementById("preloader").remove();
 }).catch((err) => {
