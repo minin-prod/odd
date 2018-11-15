@@ -84,6 +84,7 @@ new Promise((result, reject) => {
 	await dll.appearance.init();
 	await dll.taskbar.init();
 	await dll.start.init();
+	await dll.inspector.init();
 }).then((res, err) => {
 	document.getElementById("preloader").remove();
 }).catch((err) => {

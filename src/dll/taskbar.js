@@ -28,7 +28,7 @@ dll.taskbar.update = () => {
 	}
 }
 
-dll.taskbar.init = () => {
+dll.taskbar.init = async () => { return new Promise((res, err) => {
 	let layerNav = document.getElementById("odd-container").getElementsByClassName("nav")[0];
 	let sectionMid = layerNav.getElementsByClassName("mid")[0];
 	let sectionRight = layerNav.getElementsByClassName("right")[0];
@@ -56,7 +56,9 @@ dll.taskbar.init = () => {
 
 		sectionMid.appendChild(dll.taskbar.windowview);
 	}
-}
+
+	res(1);
+}); }
 
 function utilSETTIME(clock) {
 	let t = new Date();

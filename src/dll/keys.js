@@ -2,7 +2,7 @@ dll.keys = {};
 
 dll.keys.registered = [];
 
-dll.keys.init = () => {
+dll.keys.init = async () => { return new Promise((res, err) => {
 	document.addEventListener("keydown", (e) => {
 		dll.keys.registered.forEach((group) => {
 			if (!group.global && !group.location.classList.contains("focus")) return;
@@ -21,13 +21,16 @@ dll.keys.init = () => {
 			case "~": if (e.key == shortcut.substring(1) && e.altKey) return true; break;
 			case "^": if (e.key == shortcut.substring(1) && e.shiftKey) return true; break;
 			case "*": if (e.key == shortcut.substring(1) && e.ctrlKey) return true; break;
+			case ":": if (e.key == shortcut.substring(1) && e.shiftKey && e.ctrlKey) return true; break;
 
 			default: if (e.key == shortcut) return true; break;
 		}
 
 		return false;
 	}
-}
+
+	res(1);
+}); }
 
 /**
  * @param {Element} location

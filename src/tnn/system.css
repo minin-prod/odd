@@ -2,9 +2,10 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 	font-family: Arimo;
 	font-size: 0.9em;
+	display: flex;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -239,31 +240,36 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* navigation layer */
 
-.nav nav {
-	width: 100vw;
+.layer.nav {
+	height: 40px !important;
+	bottom: calc(100vh - 40px);
+}
+
+.layer.nav nav {
+	width: 100%;
 	height: 40px;
 	display: flex;
 }
 
-.nav nav * {
+.layer.nav nav * {
 	margin: 0;
 	color: var(--textColor);
 }
 
-.nav nav .section {
+.layer.nav nav .section {
 	height: 100%;
 	padding: 0 1vw;
 	display: flex;
 	align-items: center;
 }
 
-.nav nav .left {
+.layer.nav nav .left {
 	padding-left: 0.5em;
 	text-align: left;
 	justify-content: left;
 }
 
-.nav nav .mid {
+.layer.nav nav .mid {
 	padding: 0;
 	text-align: left;
 	flex: 1;
@@ -271,30 +277,36 @@ p, h1, h2, h3, h4, h5, h6 {
 	overflow-y: auto;
 }
 
-.nav nav .right {
+.layer.nav nav .right {
 	text-align: right;
 	justify-content: right;
 }
 
 /* app layer */
 
-.app {
+.layer.app {
 	top: 40px;
 	height: calc(100vh - 40px) !important;
 }
 
 /* wallpaper layer */
 
-.wall {
+.layer.wall {
 	background: var(--wallpaper);
 }
 
 /* containers and layers */
 
-.odd-container,
 .layer {
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	overflow: hidden;
-	position: absolute;
+	position: sticky;
+	bottom: 0;
+}
+
+.odd-container {
+	height: 100vh;
+	overflow: hidden;
+	flex: 1;
 }

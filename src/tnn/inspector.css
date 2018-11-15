@@ -1,0 +1,7 @@
+.odd-inspector.minimized {
+	width: 0 !important;
+}
+
+.odd-inspector {
+	transition: width 0.2s;
+}

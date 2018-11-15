@@ -8,31 +8,34 @@ dll.appearance.settings = {
 	"linkColor": "#222226"
 }
 
-dll.appearance.init = () => {
-	let settings = dll.appearance.settings;
+dll.appearance.init = async () => { return new Promise((res, err) => {
+	let config = dll.appearance.settings;
 
 	let head = document.getElementsByTagName("head")[0];
 
-	{ // settings
-		let _settings = ":root {\n";
-		Object.keys(settings).forEach((set) => {
-			_settings += `\t--${set}: ${settings[set]};\n`
-		});
-		_settings += "}";
+	let tnns = [
+		"system",
+		"inspector",
+		"controls",
+		"img"
+	]
 
-		let _style = document.createElement("style");
-		_style.innerHTML = _settings;
-		head.appendChild(_style);
+	let tnnsLoaded = 0;
+
+	{ // settings
+		let settings = ":root {\n";
+		Object.keys(config).forEach((set) => {
+			settings += `\t--${set}: ${config[set]};\n`
+		});
+		settings += "}";
+
+		let style = document.createElement("style");
+		style.innerHTML = settings;
+		head.appendChild(style);
 	}
 
 	{ // tnn files
 		let anchor = document.getElementById("tnn-anchor");
-
-		let tnns = [
-			"system",
-			"controls",
-			"img"
-		]
 
 		tnns.forEach((tnn) => {
 			let link = document.createElement("link");
@@ -40,6 +43,15 @@ dll.appearance.init = () => {
 			link.href = `./src/tnn/${tnn}.css`;
 
 			document.head.insertBefore(link, anchor);
+
+			link.addEventListener("load", () => {
+				tnnsLoaded += 1;
+				checkLoaded();
+			});
 		});
 	}
-}
+
+	function checkLoaded() {
+		if (tnnsLoaded == tnns.length) res(1);
+	}
+}); }

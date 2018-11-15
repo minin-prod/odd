@@ -38,7 +38,7 @@ dll.start.startMenu = class extends dll.window.Window {
 
 dll.start.menu = null;
 
-dll.start.init = () => {
+dll.start.init = async () => { return new Promise((res, err) => {
 	let layerWall = document.getElementById("odd-container").getElementsByClassName("wall")[0];
 	let layerApp = document.getElementById("odd-container").getElementsByClassName("app")[0];
 	let button = document.getElementsByTagName("nav")[0].getElementsByClassName("start")[0];
@@ -78,4 +78,6 @@ dll.start.init = () => {
 			dll.start.menu.window.classList.add("minimized");
 		}
 	});
-}
+
+	res(1);
+}); }
