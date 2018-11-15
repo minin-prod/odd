@@ -38,6 +38,11 @@ dll.start.startMenu = class extends dll.window.Window {
 
 dll.start.menu = null;
 
+dll.start.open = () => {
+	dll.start.menu.window.classList.toggle("minimized");
+	dll.start.menu.MoveToFront();
+}
+
 dll.start.init = async () => { return new Promise((res, err) => {
 	let layerWall = document.getElementById("odd-container").getElementsByClassName("wall")[0];
 	let layerApp = document.getElementById("odd-container").getElementsByClassName("app")[0];
@@ -47,8 +52,7 @@ dll.start.init = async () => { return new Promise((res, err) => {
 	dll.start.menu.window.classList.add("minimized", "fglass");
 
 	button.addEventListener("click", (e) => {
-		dll.start.menu.window.classList.toggle("minimized");
-		dll.start.menu.MoveToFront();
+		dll.start.open();
 	});
 
 	dll.start.menu.window.addEventListener("click", (e) => {

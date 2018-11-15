@@ -1,7 +1,30 @@
+.odd-inspector .resize-handle {
+	width: 4px;
+	cursor: ew-resize;
+}
+
+.odd-inspector .container {
+	flex: 1;
+}
+
+/* util */
+
+.-odd-inspector-highlighted {
+	outline: 2px dashed #F06 !important;
+	outline-offset: -2px !important;
+}
+
+/* container */
+
 .odd-inspector.minimized {
 	width: 0 !important;
 }
 
 .odd-inspector {
+	background: #212126;
+	display: flex;
+	position: relative;
+	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+	overflow: hidden;
 	transition: width 0.2s;
 }
