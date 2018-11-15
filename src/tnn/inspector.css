@@ -1,10 +1,63 @@
-.odd-inspector .resize-handle {
+.odd-inspector .devtools-resize-handle {
 	width: 4px;
+	background: #161616;
 	cursor: ew-resize;
 }
 
+.odd-inspector .info-resize-handle {
+	height: 4px;
+	background: #161616;
+	cursor: ns-resize;
+}
+
 .odd-inspector .container {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
+}
+
+.odd-inspector .wrapper {
+	display: flex;
+	flex: 1;
+}
+
+.odd-inspector .tablist {
+	height: 2em;
+	background: #161616;
+	display: flex;
+}
+
+.odd-inspector .tablist > div {
+	background: #161616;
+	color: #ddd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0.25;
+	transition: background 0.2s;
+}
+
+.odd-inspector .tablist > div:hover {
+	background: #212121;
+}
+
+.odd-inspector .tablist > div.active {
+	background: #212121 !important;
+}
+
+.odd-inspector .nodelist {
+	flex: 1;
+	overflow: auto;
+}
+
+.odd-inspector .console {
+	flex: 1;
+	overflow: auto;
+}
+
+.odd-inspector .info {
+	border-top: 1px solid #161616;
+	overflow: auto;
 }
 
 /* util */
@@ -21,10 +74,15 @@
 }
 
 .odd-inspector {
-	background: #212126;
+	background: #212121;
 	display: flex;
 	position: relative;
 	box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 	overflow: hidden;
 	transition: width 0.2s;
+}
+
+.odd-inspector * {
+	scrollbar-color: #bbb #161616 !important;
+	scrollbar-width: initial !important;
 }
