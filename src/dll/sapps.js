@@ -392,7 +392,7 @@ dll.hdd.fs.root.lib["eventv.dll"] = {
 
 			Object.keys(dll.events.log).forEach((event) => {
 				let l = document.createElement("div");
-				l.classList.add("control", "list-item");
+				l.classList.add("control", "list-item", "input");
 
 				l.innerText = `[${dll.events.log[event].severity}]\t[${dll.events.log[event].timestamp}] ${dll.events.log[event].name}`;
 				l.style.backgroundColor = colors[dll.events.log[event].severityId];
