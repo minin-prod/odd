@@ -169,7 +169,7 @@ p, h1, h2, h3, h4, h5, h6 {
 /* context menu */
 
 .app-4 {
-	width: 16vw;
+	width: unset;
 	height: initial;
 	max-height: 60vh;
 	resize: none;
@@ -180,11 +180,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .app-4 .window-content {
-	width: initial;
+	width: unset;
 	height: 100%;
 	padding: 0.5em;
 	background: transparent;
 	color: var(--textColor);
+}
+
+.app-4 .control.list-item {
+	padding-right: 4em !important;
 }
 
 /* start memu */
@@ -202,7 +206,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .window.start {
-	width: 16vw;
+	width: unset;
 	height: initial;
 	max-height: 60vh;
 	top: 0 !important;
@@ -215,11 +219,15 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .window.start .window-content {
-	width: initial;
+	width: unset;
 	height: 100%;
 	padding: 1.25em 1em;
 	background: transparent;
 	color: var(--textColor);
+}
+
+.window.start .control.list-item {
+	padding-right: 4em !important;
 }
 
 /* clock */
