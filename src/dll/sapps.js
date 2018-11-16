@@ -381,13 +381,24 @@ dll.hdd.fs.root.lib["eventv.dll"] = {
 		function updateList() {
 			list.innerHTML = "";
 
+			let severity = dll.events.severityLevels;
+
+			let colors = [
+				"transparent",
+				"#fce2a1",
+				"#e29494",
+				"#e29494"
+			]
+
 			Object.keys(dll.events.log).forEach((event) => {
 				let l = document.createElement("div");
-				l.classList.add("console", "list-item");
+				l.classList.add("control", "list-item");
 
-				l.innerText = dll.events.log[event].name;
+				l.innerText = `[${dll.events.log[event].severity}]\t[${dll.events.log[event].timestamp}] ${dll.events.log[event].name}`;
+				l.style.backgroundColor = colors[dll.events.log[event].severityId];
+				l.style.whiteSpace = "pre";
 
-				list.insertBefore(l, list.children[0])
+				list.insertBefore(l, list.children[0]);
 			});
 		}
 	}

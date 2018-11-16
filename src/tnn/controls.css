@@ -40,8 +40,7 @@
 }
 
 .control.list > *:not(.divider) {
-	padding: 0.2em 0.5em;
-	margin: 0.1em 0;
+	padding: 0.3em 0.5em;
 	background: rgba(var(--accentRGBA), 0);
 	transition: background 0.1s;
 	border-radius: 0;
@@ -55,7 +54,7 @@
 .control.list.paralax > *:not(.divider):hover { background: rgba(var(--accentRGBA), 0.1); }
 .control.list.paralax > *:not(.divider).focus { background: rgba(var(--accentRGBA), 0.2); }
 .control.list.light.paralax > *:not(.divider):hover { background-color: rgba(255, 255, 255, 0.1); }
-.control.list.light.paralax> *:not(.divider).focus { background-color: rgba(255, 255, 255, 0.2); }
+.control.list.light.paralax > *:not(.divider).focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.hlist {
 	height: 100%;
@@ -79,7 +78,7 @@
 .control.hlist.paralax > *:hover { background: rgba(var(--accentRGBA), 0.1); }
 .control.hlist.paralax > *.focus { background: rgba(var(--accentRGBA), 0.2); }
 .control.hlist.light.paralax > *:hover { background-color: rgba(255, 255, 255, 0.1); }
-.control.hlist.light.paralax> *.focus { background-color: rgba(255, 255, 255, 0.2); }
+.control.hlist.light.paralax > *.focus { background-color: rgba(255, 255, 255, 0.2); }
 
 .control.divider {
 	width: calc(100% - 0.8em);
