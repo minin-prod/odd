@@ -286,7 +286,7 @@ dll.hdd.fs.root.lib["npad.dll"] = {
 
 			container.classList.add("control", "flex");
 
-			textbox.classList.add("control", "f1");
+			textbox.classList.add("f1");
 			textbox.style.resize = "none";
 			textbox.style.border = "none";
 			textbox.style.outline = "none";
@@ -324,6 +324,71 @@ dll.hdd.fs.root.lib["npad.dll"] = {
 			});
 
 			textbox.focus();
+		}
+	}
+}
+
+
+dll.hdd.fs.root.lib["eventv.dll"] = {
+	_type: "file",
+	init: (w) => {
+		let splitter = document.createElement("div");
+		let navbar = document.createElement("div");
+		let container = document.createElement("div");
+		let list = document.createElement("div");
+
+		list.classList.add("control", "list")
+
+		let options = {
+			"Refresh": updateList
+		}
+
+		{
+			splitter.classList.add("control", "splitter", "splitter-navbar");
+
+			navbar.classList.add("control", "panel", "nav", "cm0", "hlist", "light");
+
+			container.classList.add("control", "flex");
+
+			list.classList.add("f1");
+			list.style.overflowY = "scroll";
+		}
+
+		{
+			splitter.appendChild(navbar);
+			splitter.appendChild(container);
+
+			container.appendChild(list);
+
+			w.content.appendChild(splitter)
+		}
+
+		{
+			Object.keys(options).forEach((item) => {
+				let b = document.createElement("div");
+				b.classList.add("control", "hlist-item");
+
+				b.innerText = item;
+
+				b.onclick = () => options[item]();
+
+				navbar.appendChild(b);
+			});
+		}
+
+		updateList();
+
+		function updateList() {
+			list.innerHTML = "";
+
+			Object.keys(dll.events.log).forEach((event) => {
+				let l = document.createElement("div");
+				l.classList.add("console", "list-item");
+
+				l.innerText = dll.events.log[event].name;
+
+				list.insertBefore(l, list.children[0])
+			});
 		}
 	}
 }

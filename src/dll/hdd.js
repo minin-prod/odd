@@ -36,6 +36,19 @@ dll.hdd.fs = {
 					init: (w) => { dll.lib.get("npad.dll"); dll.npad.init(w) },
 					content: ``
 				}
+			},
+			"eventv.exe": {
+				_type: "file",
+				_pseudoname: "Tools",
+				appdata: {
+					title: "Event Viewer",
+					meta: {
+						author: "Minin Productions",
+						description: "Event viewer utility"
+					},
+					init: (w) => { dll.lib.get("eventv.dll"); dll.eventv.init(w) },
+					content: ``
+				}
 			}
 		},
 		"lib": {

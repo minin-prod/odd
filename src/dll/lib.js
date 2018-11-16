@@ -7,7 +7,7 @@ dll.lib.get = (libname) => {
 	if (dllfile) {
 		if (typeof dllfile == "object") {
 			if (dll[lib]) {
-				console.log(`Library ${lib} is already defined, and will not be rewritten`)
+				warn(`Library ‘${lib}’ is already defined, and will not be rewritten.`)
 			} else {
 				dll[lib] = {};
 				Object.keys(dllfile).forEach((v) => { if (!v.startsWith("_")) dll[lib][v] = dllfile[v] });

@@ -88,7 +88,7 @@ new Promise((result, reject) => {
 }).then((res, err) => {
 	document.getElementById("preloader").remove();
 }).catch((err) => {
-	console.error(err);
+	error(err, true);
 	alert("An error occured while loading, reload the page or check the debug console for specifics on the error.");
 });
 
